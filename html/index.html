@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            margin: 30px;
+
+        }
+        .nav{
+            padding: 20px;
+            border: 2px solid rgb(36, 164, 26);
+        }
+
+        img{
+            display: none;
+        }
+
+        
+    
+    </style>
+</head>
+<body>
+<section>
+    <div class="nav">This is navbar</div>
+    <div class="header">This is header</div>
+    <div class="content">this is contents secction</div>
+    <div class="footer">this is footer</div> 
+    <div>
+        <img id="myImage" src="https://media.licdn.com/dms/image/v2/D5635AQFoBawGAxEJJA/profile-framedphoto-shrink_400_400/B56ZxhHQgpJQAc-/0/1771155818761?e=1773248400&v=beta&t=4pIZIrzj2tPXsZICWKDMg83RjfjutD5Giz2miH4W6rg" alt="">
+    </div>
+    <button class="click-me" onclick="showImage()">Click me</button>
+</section>
+<script
+  src="https://code.jquery.com/jquery-4.0.0.js"
+  integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+  crossorigin="anonymous"></script>
+
+<script>
+   function showImage(){
+     $('#myImage').show()
+   }
+    
+</script>
+
+    
+</body>
+</html>

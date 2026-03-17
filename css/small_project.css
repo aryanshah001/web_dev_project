@@ -1,0 +1,69 @@
+/* adding border and color to ist_heading */
+.ist_heading{
+   background-color: red;
+    padding: 5px;
+    text-align: center;
+    background-color: red;
+}
+
+.ind{
+    display: block;
+    text-align:right;
+    
+}
+.rocketman_text{
+    text-align: center;
+}
+
+.box{
+    border: 1px solid red;
+    width: 500px;
+    height: 300px;
+    background-color: red;
+    border-radius: 5%;
+    /* padding: 20px; */
+   
+    font-size: 30px;
+}
+
+.box h2{
+    text-align: center;
+}
+
+    /* .shop{
+        background-color: black;
+        color: white;
+        border-radius: 20%;
+        padding: 8px;
+        text-align: left;
+        a{
+            color: white;
+            text-decoration: none;
+        }   */
+
+    .shop{
+    background-color: black;
+    border-radius: 20%;
+    padding: 8px;
+    /* display: inline-block; */
+    margin-left: 50px;
+}
+  
+
+.shop a{
+    color: white;
+    text-decoration: none;
+}
+    
+
+
+.box, .girl_img{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.girl_img{
+   margin-left: 50px;
+}
+  
+

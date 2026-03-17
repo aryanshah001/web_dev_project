@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+      .hone{
+         font-weight: bold;
+         font-size: 40px;
+         position: absolute;
+         animation: heading 8s infinite alternate;
+         color: red;
+         text-decoration: none;
+         animation-timing-function: linear;
+      
+
+      }
+      .hone:hover{
+         color: black ;
+         animation-play-state: paused;
+      }
+     
+      @keyframes heading{
+         from{
+           
+            transform: translatex(0);
+         }
+         to{
+            transform: translatex(calc(100vw - 100%));
+           
+         }
+      }
+
+         
+      
+
+   </style>
+</head>
+<body>
+   <a href="#" class="hone">this is a link</a>
+</body>
+</html>

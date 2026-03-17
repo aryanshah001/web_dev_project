@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+   
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+             color:purple;
+        }
+
+        tr:nth-child(even){
+            background-color: aqua;
+            color: rgb(4, 1, 14);
+        }
+        th{
+           color: red;
+           
+        }
+        td,th{
+            border: 1px solid red;
+            text-align: center;
+            padding: 5px;
+        
+        }
+    </style>
+</head>
+<!-- shortcut to make table 
+    table>tr>th*3.
+    add this tr>td*3
+    after </tr> 
+    to write data .  -->
+<body>
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>No. of people</th>
+            <th>Area</th>
+ 
+        </tr>
+        <tr>
+            <td>India</td>
+            <td>110 cr</td>
+            <td>22 lakh sqkm</td>
+        </tr>
+        <tr>
+            <td>USA</td>
+            <td>50 cr</td>
+            <td>10 lakh sqkm</td>
+        </tr>
+        <tr>
+            <td>China </td>
+            <td>100 cr</td>
+            <td>27 lakh sqkm</td>
+        </tr>
+    </table>
+</body>
+</html>

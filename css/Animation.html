@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            border: 5px solid rgb(208, 15, 15);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: oval 2s infinite alternate;
+            animation-timing-function: linear;
+
+            /* pause while hovering */
+            /* animation-play-state: paused; */
+        }
+
+        @keyframes oval{
+           0%{
+            transform: translate(0 , 0);
+           }
+
+           25%{
+            transform: translate(calc(100vw - 300px ),0);
+            background-color: rgb(47, 11, 230);
+           }
+
+           50%{
+            transform: translate(calc(100vw - 100%) ,calc(100vh - 100%));
+            background-color: yellow;
+           }
+
+           75%{
+            transform: translate(0, calc(100vh - 100%));
+            background-color: red;
+           }
+
+           100%{
+            transform: translate(0, 0);
+            background-color: green;
+           }
+        }
+    </style>
+
+ </head>
+ <body>
+    
+    <div class="box"></div>
+
+ </body>
+ </html>

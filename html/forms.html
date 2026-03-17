@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        .login_button{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Read Input mdn -->
+     
+    <h1>Forms in HTML</h1>
+    
+    <!-- shortcut = form:post -->
+    <form action="url" method="POST" accept-charset="UTF-8" autocomplete="off" enctype="application/x-www-form-urlencoded">
+        
+
+        <!-- label-for is same to input-id. it highlight the input box while clicking the name. -->
+        <label for="fname">First Name</label><br>
+
+        <!-- Shortcut = input:text -->
+        <input type="text" name="fname" id="fname" placeholder="first Name" required/  > <br /><br>
+
+        <!-- name field is req to understand the server.
+        if name field is empty url becomes:-  url/submit?=Aryan&=Shah -->
+
+        <!-- here it becomes :- 
+        /submit?fname=Aryan&lname=Shah -->
+        
+        <label for="lname">Last Name</label></BR>
+        <input type="text" name="lname" id="lname" placeholder="Last name" value="sh">
+
+        <!-- Value set the default value in input field but user can change it -->
+
+        <!-- reset set the default value u have given above (i.e value=sh in lname) -->
+         <input type="reset" value="reset"> <br><br>
+
+
+        <label for="pwd">Password</label><br>
+        <input type="password" placeholder="Password" name="password" id="pwd"> <br /><br />
+
+        <label for="mail">Email address</label>
+        <input type="email" name="email" id="mail">
+
+        <!-- for phone number -->
+        <label for="tel">contact</label><br>
+         <input type="tel" name="telephome" id="tel" pattern="[0-9]{13}" maxlength="13" value="+91"  required /><br /><br />
+
+          <!-- div is used here to move the login button at center  -->
+        <div class="login_button">
+        <button type="submit">login</button>
+        </div>
+
+
+
+         <label for="feedback">feedback</label> <br>    
+         <input type="range" name="feedback" id="feedback"> <br><br>
+
+         <label for="search">search</label><br>
+         <input type="search" name="search" id="search"><br><br>
+
+        <label for="week">DOB</label>
+        <input type="week" name="week" id="week"> <br><br>
+        
+        <label for="label">Enter Email Id </label>
+        <input type="email" name="mail" id="email" required /><br><br>
+
+        <!-- multiple is used to select multiple element  -->
+<!-- 
+        <select name="country" id="country" multiple>  -->
+
+        <label for="country">country:</label>
+        <select name="country" id="country" > 
+
+             <!-- value is for what data is sent to server after submitting 
+            eg:- country=In -->
+
+            <!-- DISABLED OPTION-->
+            <option value=""disabled>Select your Country</option>
+
+           
+           
+            <option value="In">India</option>
+            <option value="Nep">Nepal</option>
+            <option value="Ch">China</option>
+
+             <!-- SELECTED BY DEFAULT -->
+             <option value="usa" selected>america</option>
+
+        </select>
+
+        <h3>Choose only one</h3>   
+
+     <label for="playing">school</label>
+     <input type="radio"  name="study" value="playing"><br>
+
+     <label for="study">college</label>
+     <input type="radio" name="study" id="read" value="read"> <br /><br />
+
+     <!-- TEXTAREA:COLS:ROWS -->
+     <textarea name="" id="" cols="30" rows="10">Text here
+        white space matter here, so clear the whitespace
+     </textarea> <br>
+
+     <!-- BUTTONS (use with js)-->
+      <button type="button">click me</button>
+
+
+
+    </form>
+
+</body>
+</html>

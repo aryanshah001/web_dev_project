@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .widt{
+            border: 2px solid blue;
+            display: inline-block;
+            min-width: 650px;
+        }
+        .box1{
+            display: inline-block;
+            border: 2px solid rebeccapurple;
+            height: 200px;
+            width: 200px;
+           
+        }
+        .box2{
+            display: inline-block;
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+        }
+
+        h4{
+
+            width: 150px;  
+            border: 1px solid red;
+          /* hegiht not needed */
+           height: 25px;
+
+            /* or width:18% */
+        }
+        .wid{
+            display: inline;
+            border: 2px solid black;
+        }
+
+        .in{
+            border: 5px solid skyblue;
+            display: inline-block;
+            max-width: 185px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>set block border width as inline through css. see below one border</h2>
+    
+    <h3 class="widt">Div is block element but we can override it as inline through css
+    </h3> <br>
+
+    <div class="box1">
+        Lorem ipsum dolor sit amet.
+    </div>
+
+    <div class="box2">
+        2 ipsum dolor sit amet.
+    </div>
+
+   <p>this is block element but css helps to select inline border</p>
+
+    <h4>this is block element</h4>
+
+    <p class="in">this is also block element but css inline select exact width of border</p> <br>
+
+    <div class="wid"> this is block element.
+    </div>
+</body>
+</html>

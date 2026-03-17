@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- add this to easy search and rank webpage -->
+    <meta name="description" content="this is tutorial related img tag">
+
+    <!-- nowadays it is done through js (which is more reliable) -->
+    <meta http-equiv="refresh" content="30">
+
+    <!-- base tag is rarely used nowadays. instead of it relative path is used -->
+    <base href="https://example.com/">
+
+    <!-- <style>
+        .dsc_img{
+            width: 100%;
+            height: auto;
+        }
+    </style> -->
+
+</head>
+<body>
+    
+    <img src="../images/nature.jpg" alt="nature_img" width="150px" height="225px">
+
+    
+    <!-- SET CLASS INSIDE IMG TAG -->
+
+    <!-- <img src="../images/DSC_0110.JPG" alt="dsc" class="dsc_img"> -->
+
+    <!-- media attr is used to check if it is tablet or mobile or web view. -->
+
+   <figure>
+    <picture>
+       <source media="(min-width:1200px)" srcset="images/nature.jpg" />
+
+       <source media="(min-width:800px)" srcset="images/nature.jpg" />
+
+       <img src="images/nature.jpg" alt="nature" width="100">
+       </picture>
+        <figcaption>write sth about img </figcaption>
+   
+   </figure>    
+
+   <!-- an image map generator -->
+    <!-- process
+    - search image map generator in google
+    - open and click area to add 
+    - show code - copy  and paste in editor
+    - write a js code to do the work on clicking map (img)
+    - <script>
+        function one(){
+            alert("you clicked 1")
+        }
+    </script>
+    also have to add to pasted code.. area onclick="one()"
+    -->
+   
+
+</body>
+</html>

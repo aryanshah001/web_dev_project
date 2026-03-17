@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .blue{
+            color: blue;
+        }
+
+       .bg{
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+        }
+        #study{
+            text-decoration: underline;
+            color: red;
+        }
+
+        /* GROUPED CSS SELE CTOR */
+        h3,h4{
+            background-color:yellow;
+            color: #f1333f;
+            font-size: 0.6rem; 
+            /* or 8px  */
+        }
+        /* SELECTING NESTED ELEMENTS
+        EITHER U CAN ADD CLASS OR U CAN GIVE PATH. */
+
+        /* THIS ONE IS CLASS METHOD */
+        .str{
+            text-decoration: underline;
+        }
+
+        /* THIS ONE IS PATH METHOD */
+        P strong{
+            color: blue;
+        }
+
+         strong i {
+            color: red;
+        }
+
+        /* border styling */
+        .wid{
+            /* border-width: 5px;
+            border-color: #f1333f;
+            border-style: dashed; */
+            border: 15px solid red;
+            /* border-radius: 20px;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;  */
+
+            /* playing with border to make diff objects */
+
+            /* border-top-left-radius: 5px;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 5px;
+            width: 200px;
+            height: 200px; */
+
+            border-radius: 5px 50% 5px 50%;
+            width: 200px;
+            height: 200px;
+        }
+
+      
+
+    </style>
+</head>
+<body>
+
+   <p>playing with border and px </p>
+
+            <!-- CLASS -->
+
+     <!-- Define two or more class inside one tag with same class on other also to style both-->
+    <h2 class="blue bg">this is heading 1</h2>
+    <h2>this is heading 2</h2>
+    <p class="bg">hello world</p>
+
+                <!-- ID -->
+    <!-- ALWAYS CREATE UNIQUE ID  -->
+    
+    <h2 id="study">learning about id</h2>
+    <p id="para">hey there</p>
+
+    <!-- GROUPED CSS SELECTOR -->
+    <h3>grouping</h3>
+    <h4>css</h4>
+
+    <!-- SELECTING NESTED ELEMENTS -->
+     <div>
+        <p>
+            Lorem, <strong class="str">ipsum dolor <i>sit</i>  amet consectetur</strong>  adipisicing elit. Error minima vero provident unde debitis doloremque quam a repudiandae, harum at.
+        </p>
+     </div>
+
+     <p class="wid">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, iste?</p>
+
+     
+
+
+</body>
+</html>
