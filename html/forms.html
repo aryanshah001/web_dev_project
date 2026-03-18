@@ -1,3 +1,16 @@
+<!-- BUTTON:SUBMIT -->
+ <!-- BUTTON:DISABLED -->
+  <!-- INPUT:BUTTON -->
+   <!-- INPUT:SUBMIT -->
+    <!-- INPUT:CHECBOX -->
+     <!-- INPUT:RADIO -->
+      <!-- INPUT:RANGE -->
+       <!-- AUTOFOCUS -->
+       <!-- AUTOCOMPLETE -->
+        
+
+      <!-- ALWAYS PREFER SUBMIT / RESET / BUTTON ( FOR JS) WITH BUTTON NOT INPUT -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +20,14 @@
 
     <style>
         .login_button{
-            text-align: center;
+           text-align: center;
+           color: yellow;
+
+        }
+
+        .login{
+            color: blue;
+            background-color: yellow;
         }
     </style>
 
@@ -26,7 +46,7 @@
         <label for="fname">First Name</label><br>
 
         <!-- Shortcut = input:text -->
-        <input type="text" name="fname" id="fname" placeholder="first Name" required/  > <br /><br>
+        <input type="text" name="fname" id="fname" placeholder="first Name" required  autofocus > <br /><br>
 
         <!-- name field is req to understand the server.
         if name field is empty url becomes:-  url/submit?=Aryan&=Shah -->
@@ -35,7 +55,7 @@
         /submit?fname=Aryan&lname=Shah -->
         
         <label for="lname">Last Name</label></BR>
-        <input type="text" name="lname" id="lname" placeholder="Last name" value="sh">
+        <input type="text" name="lname" id="lname" placeholder="Last name" value="sh" required/>
 
         <!-- Value set the default value in input field but user can change it -->
 
@@ -44,7 +64,7 @@
 
 
         <label for="pwd">Password</label><br>
-        <input type="password" placeholder="Password" name="password" id="pwd"> <br /><br />
+        <input type="password" placeholder="Password" name="password" id="pwd" > <br /><br />
 
         <label for="mail">Email address</label>
         <input type="email" name="email" id="mail">
@@ -53,24 +73,50 @@
         <label for="tel">contact</label><br>
          <input type="tel" name="telephome" id="tel" pattern="[0-9]{13}" maxlength="13" value="+91"  required /><br /><br />
 
-          <!-- div is used here to move the login button at center  -->
+          <!-- div is used here to apply css  -->
+
+          <!-- USE THIS IN LOGIN FORM -->
         <div class="login_button">
         <button type="submit">login</button>
-        </div>
+        </div> <br>
 
+            <!-- USE THIS LOGIN FOR JS ACTION -->
+        <input type="button" value="login" class="login"> <br><br>
 
+        <!-- DISABLED BUTTON -->
+        <button disabled="disabled">disabled</button><br><br>
 
+        <!-- CHECKBOX -->
+         <label> Was this helpful <input type="checkbox" name="helpful" id="check" value="yes"></label> <br><br>
+         
+        <!-- FEEDBACK -->
          <label for="feedback">feedback</label> <br>    
          <input type="range" name="feedback" id="feedback"> <br><br>
 
+            <!-- SEARCH -->
          <label for="search">search</label><br>
          <input type="search" name="search" id="search"><br><br>
 
+            <!-- WEEK -->
         <label for="week">DOB</label>
         <input type="week" name="week" id="week"> <br><br>
         
+        <!-- EMAIL -->
         <label for="label">Enter Email Id </label>
         <input type="email" name="mail" id="email" required /><br><br>
+
+            <!-- READONLY CANT CHANGE BY USER ONLY READ AND DATA IS SENT TO SERVER -->
+
+        <label> Email :- 
+            <input type="email" name="email" id="mail" value="shahbinod123@gmail.com" readonly>
+        </label> <br><br>
+
+
+            <!-- DISABLED -->
+        <label>
+            Email ID :- 
+            <input type="email" name="email" id="mail" value="shahbinod123@gmail.com" disabled>
+        </label> <br><br>
 
         <!-- multiple is used to select multiple element  -->
 <!-- 
@@ -85,17 +131,17 @@
             <!-- DISABLED OPTION-->
             <option value=""disabled>Select your Country</option>
 
-           
-           
             <option value="In">India</option>
-            <option value="Nep">Nepal</option>
+            <option value="thai">thiland</option>
             <option value="Ch">China</option>
 
              <!-- SELECTED BY DEFAULT -->
-             <option value="usa" selected>america</option>
+             <option value="nep" selected>Nepal</option>
 
         </select>
 
+        <!-- RADIO CAN BE DONE BY 2 METHODS.
+         THIS IS 1ST METHOD -->
         <h3>Choose only one</h3>   
 
      <label for="playing">school</label>
@@ -104,14 +150,29 @@
      <label for="study">college</label>
      <input type="radio" name="study" id="read" value="read"> <br /><br />
 
+     <!-- THIS IS 2ND METHOD -->
+    <label>Was this helpful </label><br />
+
+    <label><input type="radio" name="helpful" id="yes">Yes</label>
+    <label><input type="radio" name="helpful" id="no">No</label> 
+    <label><input type="radio" name="helpful" id="none">None</label>
+    <br><br>
+
      <!-- TEXTAREA:COLS:ROWS -->
      <textarea name="" id="" cols="30" rows="10">Text here
         white space matter here, so clear the whitespace
      </textarea> <br>
 
      <!-- BUTTONS (use with js)-->
-      <button type="button">click me</button>
+      <button type="button">click me</button> <br><br>
 
+      <!-- USED  TO GROUP THE RELATED INPUT -->
+      <fieldset>
+            <legend>Personal Informatin</legend>
+
+            <input type="text" placeholder="Name" ><br><br>
+            <input type="text" placeholder="address" >
+     </fieldset>
 
 
     </form>

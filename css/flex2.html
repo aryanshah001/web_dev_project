@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+           
+           
+        }
+       .header1, .header2{
+            border: 1px solid red;
+            background-color: red;
+            font-size: 25px;
+            padding: 5px;  
+            border-bottom: 5px solid black;
+            flex-shrink: 0;
+            
+
+        }
+
+        .header1{
+            flex-basis: 20%;
+            text-align: center;
+        }
+        .header2{
+            flex-basis: 80%;
+            text-align: center;
+        }
+        .box1,.box2{
+            /* border: 1px solid blue; */
+            flex-basis: 50%;
+            flex-grow: 1;
+            font-size: large;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+        .box1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+            color: red;
+        }
+        .footer{
+           background-color: skyblue;
+           width: 100vw;
+           height: calc(100vh - 334px);
+           flex-grow: 0;
+           font-size: 40px;
+           font-weight: 800;           
+        }
+
+        .foot_des{
+            font-size: medium;
+            font-weight: 400;
+            padding-left: 50px;
+        }
+       
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="container">
+        <div class="header1">Header1</div>
+        <div class="header2">Header2</div>
+        <div class="box1">
+            Description of header 1
+        </div>
+        <div class="box2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda autem ipsam molestias veniam, fugit ea eos corporis optio modi sint perspiciatis incidunt laborum consequatur sit, in sequi. Ratione iusto consectetur dolorum fugiat numquam consequuntur atque animi quasi, possimus vitae delectus praesentium, ipsa in enim nobis ut id a. Autem quidem ab molestias sunt praesentium voluptatem porro placeat recusandae, alias deleniti ut quo, molestiae error possimus vero totam corporis deserunt consequatur ex corrupti iste facilis unde! Quibusdam eos iusto perferendis culpa harum nisi autem unde beatae consequuntur quam asperiores perspiciatis commodi reprehenderit eligendi amet, illo repellat id. Architecto corporis autem impedit exercitationem error, reiciendis dolores soluta ratione aliquam odio recusandae ipsam molestias incidunt, magni possimus a labore sunt sed accusantium consequatur iusto quos maxime ab! Cumque deleniti omnis, aut ratione obcaecati minus harum necessitatibus et error sint, mollitia facere velit expedita. Commodi doloremque sit similique corporis architecto expedita. Mollitia officiis commodi debitis molestiae voluptatem, ad earum a minus itaque officia dolorum sapiente magni molestias tempora magnam repellendus aliquam qui tenetur autem est pariatur ipsa voluptate. Quos natus ipsam assumenda, quia nostrum ullam cumque explicabo et voluptates delectus? Aspernatur in, animi, eius quod, commodi corrupti nisi quis perspiciatis quo nesciunt repellendus natus?
+        </div>
+
+        <div class="footer">footer :- 
+            <div class="foot_des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex temporibus cumque quidem quis ducimus doloribus repudiandae aspernatur, repellat ipsum, eius obcaecati at dignissimos nam inventore autem ut eum deleniti natus ullam, dicta similique. Ullam assumenda in architecto eius eum magni modi natus ipsum veniam. Ipsum ipsam a magnam id unde.</div>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
