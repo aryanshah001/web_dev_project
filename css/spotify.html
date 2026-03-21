@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body{
+            background-color: black;
+            color: grey;
+        }
+
+        #heading{
+            display: flex;
+            align-items: center;
+        }
+        
+        #heading .icon{
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+         .fa-spotify{
+            font-size: 35px;
+            color: white;
+            margin-left: 20px;
+        }
+
+         .fa-house{
+            display: flex;
+            width: 35px;
+            height: 35px;
+            border: 1px solid white;
+            border-radius: 50%;
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .search{
+            position: relative;
+            flex: 1;
+            max-width: 300px;
+
+             
+        }
+
+        .search input{
+            border: 2px solid white;
+            border-radius: 25px;  
+            background-color: black; 
+            color: white;
+            font-size: 20px;
+            width: 100%;
+            height: 35px;
+            padding-left: 60px;  
+           
+        }
+
+        .fa-magnifying-glass{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        .fa-image{
+            position: absolute;
+            right:25px;
+            top: 10px;
+        }
+
+        .rtborder{
+            position: absolute;
+            width: 5px;
+            height: 15px;
+            border-left: 2px solid grey;
+            right: 55px;
+            bottom: 10px;
+        }
+
+        #heading .psd{
+            display: flex;
+            margin-left: 50px;
+            gap: 50px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #heading .sl{
+            display: flex;
+            font-size: 20px;
+            font-weight: bold;
+            gap: 50px;
+            margin-left: auto;
+        }
+        .login{
+           display: flex ;
+           width: 90px;
+           height: 35px;
+           border: 1px solid white;
+           justify-content: center;
+           align-items: center;
+           border-radius: 25px;
+           background-color: white;
+           color: black;
+        }
+        .signup{
+            display: flex;
+             align-items: center;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div id="heading">
+
+        <div class="icon">
+            <i class="fa-brands fa-spotify"></i>
+
+            <i class="fa-solid fa-house"></i>
+
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="search" >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <i class="fa-solid fa-image"></i>
+
+                <div class="rtborder"></div>
+            </div> </div>
+        
+
+        <div class="psd">
+            <div class="Premium">Premium</div>
+            <div class="Support">Support</div>
+            <div class="download">Download</div>
+        </div>
+
+        <div class="sl">
+            <div class="signup">Signup</div>
+            <div class="login">Login</div>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>

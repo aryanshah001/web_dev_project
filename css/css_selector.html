@@ -1,3 +1,13 @@
+<!-- CAN SELECT TWO CLASSES BY SEPARATING WITH COMMA -->
+ .CLASS1 , .CLASS2{
+
+ }
+
+ <!-- WITHOUT CLASS NESTED SELECTOR -->
+ div strong {
+
+ }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +34,11 @@
         #parent .box ~ .box{
             background-color: purple;
         }
+
+/* NESTED SELECTOR */
+        div strong{
+            text-decoration: underline;
+        }
     </style>
 
 </head>
@@ -41,6 +56,12 @@
 
     </div>
     <div class="box">this doesnot get selected</div>
+
+
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero repellat <strong>officia ratione est nostrum </strong>a inventore sed obcaecati maiores impedit?
+
+    </div>
 
 </body>
 </html>

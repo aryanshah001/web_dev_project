@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <style>
+    body{
+      background-color: blue;
+    }
+
+          /* min 600 req to become red */
+
+    @media(min-height:600px) {    
+      body{
+        background-color: rgb(25, 236, 127);
+      }
+    }
+
+    /* @media(max-height:500px){    
+      body{
+      background-color: yellow;
+      }
+    } */
+
+    .box{
+      height: 200px;
+      width: 200px; 
+      border: 5px solid rgb(232, 15, 15);
+      margin: 50px auto;
+    }
+
+    /* CAN USE BOTH MIN AND MAX AT A TIME */
+  
+    @media (max-width:1000px) and (min-width:700px){
+      body{
+        background-color: aliceblue;
+      }
+      .box {
+        border-radius: 50%;
+        background-color: yellow;
+        
+      }
+    }
+
+ </style>
+</head>
+<body>
+ 
+  <div class="box"></div>
+
+</body>
+</html>
