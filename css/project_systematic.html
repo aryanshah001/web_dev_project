@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <style>
+
+        *{
+              box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            margin-top: 1rem;
+          
+        }
+
+
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            padding: 0 3rem;
+           
+        }
+
+    /* IMP FOR RESPONSIVE */
+        .image img{
+            width: clamp(60px, 10vw, 120px );
+           
+            
+        }
+
+      
+        .search {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+            min-width: 200px;
+           
+        }
+        .search input{
+           width: 100%;
+           height: 3rem;
+           padding-left: 3rem;
+           font-size: clamp(1rem, 1vw , 1.2rem);
+           
+        } 
+
+        .search input::placeholder{
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           font-size: 2rem;
+           
+        }
+        .fa-magnifying-glass{
+               position: absolute;
+               font-size: clamp(1rem, 1vw , 1.3rem);
+               top: 50%;
+               transform: translateY(-50%);
+               left: 10px;
+            }
+        @media (max-width: 768px){
+
+    #container{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rt{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .second_nav{
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .second_nav a{
+        font-size: 0.5rem;
+        padding: 0.5rem;
+    }
+}
+
+        #container .rt{
+            display: flex;
+           margin-left: auto;
+            gap: 3rem;
+            font-size: clamp(1rem, 1.5vw, 2rem);
+        }
+
+        .underline{
+            
+            border: 2px solid grey;
+            margin-top: 1.2rem;
+            
+        }
+        
+       
+        
+        .second_nav{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+        }
+
+        .second_nav a {
+            text-decoration: none;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            color: black;
+ 
+            }
+        
+            a:hover {
+                color: blue;
+            }
+
+            .third_img img{
+               
+                width: 100%;
+                    
+            }
+            .third_img{
+                 position: relative;
+            }
+
+            .boxinsideimg{
+
+                position: absolute;
+                width: 350px;
+                height: 300px;
+                /* border: 5px solid black; */
+                top: 0;
+                right: 1rem;
+                margin:5rem ;
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: white;
+                padding-top: 3rem;
+                padding-left: 1.2rem;
+                /* position: relative; */
+            }
+            .button {
+                position: absolute;
+                bottom: 20px;
+                /* left: 20px; */
+                right: 8rem;
+                /* margin-bottom: 4rem; */
+                font-size: 2rem;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                
+            }
+        
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="container">
+
+        <div class="image"><img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="meesho"></div>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" name="search" id="search" placeholder="search">
+            
+        </div>
+
+        <div class="rt">
+            <span class="supplier">become a supplier</span>
+            <span class="investor">investor relations</span>
+            <span class="profile">profile</span>
+            <span class="cart">cart</span>
+        </div>
+
+       
+    </div>
+     <div class="underline"></div>
+
+    <div class="second_nav">
+            <a class="saree" href="">saree</a>
+            <a href="mens">mens wear</a>
+            <a href="women">womens wear</a>
+            <a href="under">undergarment</a>
+            <a href="beauty">beauty</a>
+            <a href="health">health</a>
+        </div>
+    <div class="third_img">
+        <img src="https://images.meesho.com/images/marketing/1767796583251.webp" alt="third_nav">
+
+       <div class="boxinsideimg">Smart Shopping trusted by millions
+        <button class="button">shop now</button>
+       </div>
+    </div>
+
+     
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+Responsive
+
+font-size: clamp(16px, 3vw, 40px);     = mobile , tablet , laptop
+height:clamp(35px, 5vw, 60px)
+flex: 1 1 value = grow shrink and value
+If screen width is:
+
+📱 Mobile (360px) → 1vw = 3.6px
+📲 Tablet (768px) → 1vw = 7.68px
+💻 Laptop (1200px) → 1vw = 12px
+
+.image img {
+  width: clamp(60px, 8vw, 120px);
+}
+
+in search bar 
+set min and max width both for responsive

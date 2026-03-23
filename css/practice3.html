@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>practice3</title>
+
+        <style>
+
+            *{
+                
+                box-sizing: border-box;
+        
+            }
+
+            body{
+                margin: 0;
+            }
+
+            #container{
+                
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 5rem;
+                border-bottom: 1px solid grey ;
+                padding: 0 4rem ;
+               
+            }
+
+            .header-icon{
+                display: flex;
+                gap: 3rem;
+            }
+
+            .mw{
+                
+                color: red;
+                font-size: 3rem;
+                
+            
+            }
+
+            .hm{
+                display: flex;
+                font-size: 2rem ;
+                align-items: center;
+                font-weight: bold ;
+            }
+            .header-right{
+                display: flex;
+                flex: 1;
+                justify-content: end;
+                gap: 3rem;
+            }
+            .search{
+                flex: 1;
+                max-width: 400px;
+            }
+
+            .search input{
+                height: 30px;
+                width: 100%;
+            }
+            
+            .choose{
+                display: flex;
+
+
+            }
+        </style>
+    </head>
+    <body>  
+        
+        <div id="container">
+
+            <div class="header-icon">
+                <span class="mw">Mixwell</span>
+                <span class="hm">
+                    Hardic Machinery
+                </span>
+            </div>
+
+            <div class="header-right">
+                <span class="search">
+                    <input type="search" name="search" id="search">
+                </span>
+                <span class="choose">
+                    <select>
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </span>
+            </div>
+
+        </div>
+
+    </body>
+    </html>

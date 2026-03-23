@@ -8,11 +8,16 @@
     <style>
          
          /* THIS IS IMP AND HAVE TO WRITE IN ALL WEB DESIGN FOR IMG*/
-        body{
+        
            img{
             max-width: 100%;
             height: auto;
            }
+        
+
+        /* AND IF U ARE USING IMG AS LOGO THEN  USE CLAMP FOR RESPONSIVE*/
+        .image img{
+            width: clamp(70px, 10vw, 120px);
         }
 
     </style>
@@ -21,6 +26,10 @@
 <body>
     
     <img src="https://tse3.mm.bing.net/th/id/OIP.x7715ouwBYohvz5AH2xJ-wHaLH?pid=Api&P=0&h=180" alt="hello">
+
+    <div class="image"><img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="meesho_logo">
+    
+    </div>
 
 </body>
 </html>
