@@ -78,6 +78,14 @@ console.log(typeof d);      //TYPE GET CONVERTED TO NUMBER BUT PRINT NaN
 // true=1 , false=0
 
 
+// Data type of :-
+
+// null = Object
+// undefined = undefined
+// 123n = BigInt
+// array = Object
+// object = object
+// function = function (objectfunction)
 
 
 

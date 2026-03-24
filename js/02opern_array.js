@@ -85,11 +85,26 @@ console.log(1 === 1);     //TRUE
 
 
 // 2. NON-PRIMITIVE TYPE (REFERENCE TYPE)
-// 1. Array        2. Object       3.Function
+// 1. Array        2. Object       3.function
 
 
+const myArray = ['ram', 'shyam' , 'apple'];
 
+let myObj = {
+    name:'binod',
+    age:18,
+}
 
+// together Array + Object 
+let users = [
+    {name:ram , age:18},       
+    {name:shyam , age:22}    
+];
+
+// Function
+const myFunction = function(){
+    console.log('hello world');  
+};
 
 
 
