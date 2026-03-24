@@ -3,50 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>meesho site </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <style>
-
         *{
-              box-sizing: border-box;
+            
+            box-sizing: border-box;
         }
 
         body{
             margin: 0;
             padding: 0;
-            margin-top: 1rem;
-          
         }
 
         #container{
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
             align-items: center;
-           
+
         }
 
-        .image img{
-            width: clamp(60px, 10vw, 120px );
+        .meesho_img{
+            width: clamp(3rem, 10vw, 8rem);
+            margin: 1rem 2rem;
+        }
+        .meesho_img img{
+            max-width: 100%;
+            height: auto;
+            
             
         }
-        /* @media(min-width:500px){
-            .search{
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .search input{
-                max-width: 100%;
-                width: 100%;
-            }
-        } */
-        
-      
-        .search {
+
+        .search{
+            position: relative;
             display: flex;
-            flex: 1;
-            max-width: 300px;
+            flex-wrap: wrap;
+            flex:1    
         }
+        .search input{
+            width: clamp(200px, 50%, 500px);
+           height: 2rem;
+           padding-left: 2.5rem;
+          
+          
+        }
+        .fa-magnifying-glass{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 0.8rem;
+            color: grey;
+
+        }
+
+        .rt_heading{
+            display: flex;
+            gap: 2rem;
+            margin-right: 2rem;
+            font-size: clamp(0.5rem, 3vw, 1.5rem);
+            align-items: center;
+            
+        }
+
+        .rt_heading a{
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .line1{
+            width: 2px;
+            height: 2.5rem;
+            border:1px solid grey
+        }
+        .line2{
+            width: 2px;
+            height: 2.5rem;
+            border:1px solid grey
+        }
+
+       .pr_usr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* gap: 0.1rem; */
+       }
+
+       .cart_logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+       }
+       .image img{
+       
+        width: 100%;
+        height: auto;
+       }
+
+       .image{
+         position: relative;
+        
+       }
+       h1.first{
+        position: absolute;
+        bottom: 65%;      
+        right: 10%;       
+        color: white;
+        font-size: clamp(1rem, 3vw, 3rem);
+        margin: 0;      
+        }
+
+        h1.second{
+            position: absolute;
+            bottom: 45%;
+            right: 8%;
+            font-size: clamp(1rem, 3vw , 3rem);
+            color: white;
+            margin: 0;
+        }
+
+        .shop{
+            position: absolute;
+            right: 15%;
+            bottom: 20%;
+            font-size: clamp(2rem , 3vw , 3rem);
+        }
+
+
+
+@media(max-width:500px){
+    h1.first{
+    right: 5px;
+    } 
+}
+
+@media(max-width:500px){
+    h1.second{
+        right:5px;
+    }
+}
+@media(max-width:800px){
+    .shop{
+        font-size: 1.5rem;
+       
+    }
+}
+@media(max-width:500px){
+    .shop{
+        font-size: 0.8rem;
+       right: 5px;
+    }
+}
+
+    a.shop2{
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid black;
+        padding: 0.5rem;
+        background-color: black;
+        color: white;
+        
+    }
+
+    a.shop2:hover{
+        color:blue;
+    }
+       
+       
+      
+
+     
     </style>
 
 </head>
@@ -54,13 +184,48 @@
     
     <div id="container">
 
-        <div class="image"><img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="meesho"></div>
+    <div class="meesho_img"><img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="meesho"></div>
 
-        <div class="search">
-            <input type="search" name="search" id="search">
+    <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" name="search" id="search" placeholder="search">
+    </div>
+
+    <div class="rt_heading">
+        <a href="" class="supplier">Become a Supplier</a>
+        <span class="line1"></span>
+        
+        <a href="" class="investor">Investor Relation</a>
+        <span class="line2"></span>
+
+        <div class="pr_usr">
+            <i class="fa-solid fa-user"></i>
+            <a href="" class="profile">Profile</a>
         </div>
+        
+        <div class="cart_logo">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="" class="cart">Cart</a>
+        </div>
+        
+    </div>
 
     </div>
+
+    <div class="image">
+        <img src="https://images.meesho.com/images/marketing/1767796583251.webp" alt="image section">
+       
+            <h1 class="first">Smart Shopping</h1>
+            <h1 class="second">Trusted by Millions</h1>
+            <button class="shop">Shop now</button>
+            
+       </div> 
+       <div class="scroll"><a href="" class="shop2">shop2</a></div>
+       
+  <button>shopnow</button>
+  <button type="button"></button>
+  
+    
 
 </body>
 </html>

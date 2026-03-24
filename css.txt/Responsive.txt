@@ -1,8 +1,15 @@
 Responsive
 
 font-size: clamp(16px, 3vw, 40px);     = mobile , tablet , laptop
+
+for logo (3rem, 10vw, 8rem)
+for font (1rem, 5vw, 2.5rem)
+padding: clamp(0.5rem, 2vw, 2rem);
+width: clamp(200px, 30vw, 400px); /* responsive card */
+width: clamp(200px, 50%, 500px) /*search input*/
 height:clamp(35px, 5vw, 60px)
-flex: 1 1 value = grow shrink and value
+
+flex: 1 1 value = grow shrink and value=width 
 If screen width is:
 
 📱 Mobile (360px) → 1vw = 3.6px
