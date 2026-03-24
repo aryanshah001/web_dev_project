@@ -14,6 +14,9 @@ const id = Symbol(123);
 const anotherId = Symbol(123);
 console.log(id===anotherId);    //false
 
+// BigInt FOR VERY LARGE NUMBER
+const bigNumber = 5463216548354154635n
+
 
 
 // ***************************************************************************************************
