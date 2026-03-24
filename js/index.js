@@ -9,6 +9,13 @@ let accountemail;
 // console.log([accountName, accountId, accountpass]);
 // console.table([accountName, accountId, accountpass]);
 
+// SYMBOL FOR UNIQUENESS (EXTRA)
+const id = Symbol(123);
+const anotherId = Symbol(123);
+console.log(id===anotherId);    //false
+
+
+
 // ***************************************************************************************************
 
 // 5. DATA TYPES AND ECMA STANDARD.

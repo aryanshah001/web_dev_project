@@ -71,9 +71,21 @@ console.log(null >= 1); //true
 console.log('1' === 1);   //FALSE
 console.log(1 === 1);     //TRUE
 
+// ************************************************************************************************
+
+// SUMMARY ON DATA TYPES.
+
+// TWO TYPES OF DATA TYPES BASED ON STORAGE IN MEMORY
+// 1.PRIMITIVE DATA TYPES
+// 2.NON-PRIMITIVE DATA TYPES (REFERENCE DATA TYPES)
+
+// 1. PRIMITIVE DATA TYPES
+// 1. Number       2. String       3.Boolean
+// 4. null         5. undefined       6. Symbol        7.BigInt
 
 
-
+// 2. NON-PRIMITIVE TYPE (REFERENCE TYPE)
+// 1. Array        2. Object       3.Function
 
 
 

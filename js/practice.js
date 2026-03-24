@@ -1,2 +1,4 @@
-console.log('1' === 1);
-console.log(1 === 1);
+const id = Symbol(123);
+const anotherId = Symbol(123);
+console.log(id===anotherId);
+console.log(id==anotherId);
