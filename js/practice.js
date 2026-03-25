@@ -1,9 +1,5 @@
-let dobOfBinod =  new Date(2001,3,23);
-console.log(
-    dobOfBinod.toLocaleString('default',{
-        weekday:"long",
-        day: "numeric",
-        month:"short",
-        year:"numeric"
-    })
-);
+score1 = 100;
+score2 = 200;
+score3 = 300;
+console.log(Array. of (score1 , score2, score3));
+
