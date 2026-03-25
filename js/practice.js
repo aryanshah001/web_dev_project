@@ -1,4 +1,9 @@
-max = 500;
-min = 50;
-
-console.log(Math.floor(Math.random() * (max-min+1) +min));
+let dobOfBinod =  new Date(2001,3,23);
+console.log(
+    dobOfBinod.toLocaleString('default',{
+        weekday:"long",
+        day: "numeric",
+        month:"short",
+        year:"numeric"
+    })
+);
