@@ -64,10 +64,20 @@ const allHeros = [...superhero , ...villian];
 // console.log(allHeros);
 
 
-// ANOTHER METHOD. FLAT . USED WHEN ARRAY INSIDE ARRAY INSIDE ARRAY.
+// ANOTHER METHOD. FLAT . USED WHEN ARRAY INSIDE ARRAY (NESTED).
 
 manyArray = [1,2,[3,4,5],7,[8,[9,0]]]
 console.log(manyArray.flat(Infinity));
+
+
+myarr1 = ['ram','shyam'];
+myarrNum = [1 , 2 , 3,['hari','gita']];
+myarrNum2 = [0,4,5];
+myarr3= [4];
+
+result = [myarr1,myarrNum,myarrNum2,myarr3].flat(Infinity);
+console.log(result);
+
 
 // CONVERT TO ARRAY.
 
@@ -76,11 +86,13 @@ console.log(Array.from('binod'));       // CONVERT BINOD TO ARRAY
 
 console.log(Array.from({name:'ram'}));  //INTERESTING CASE 
 
-// MAKE ARRAY
+// HOW TO MAKE ARRAY.
 score1 = 100;
 score2 = 200;
 score3 = 300;
 console.log(Array. of (score1 , score2, score3));
+
+
 
 
 
