@@ -24,7 +24,12 @@ const user1 = {
 
 
 
-console.log(user1); 
+// console.log(user1); 
+// console.log(Object.keys(user1));     //IMP
+// console.log(Object.values(user1));     //IMP
+// console.log(Object.entries(user1));    // NOT IMP
+console.log(user1.hasOwnProperty('name'));   //CHECK , IF EXIST OR NOT 
+
 
 //TWO WAYS TO ACCESS VALUES.
 
@@ -85,5 +90,62 @@ user1.greeting = function(){
 
 
 // *********************OBJECTS 2 / PART 17 *******************************************
+
+// THIS IS ALSO OBJECT LITERALS. IST CREATE EMPTY THEN ASSIGN VALUE. 
+
+const tinderUser = {}
+tinderUser.id = '1234'
+tinderUser.name = 'defronix'
+tinderUser.email = 'hello@defronix.com'
+
+// console.log(tinderUser);
+
+// IMPORTANT.
+// console.log(Object.keys(tinderUser));  //SHOWS ONLY KEYS IN ARRAY FORM.
+// console.log(Object.values(tinderUser));
+
+
+
+// NESTING OF LITERAL OBJECTS.
+const User2 = {
+    username:{
+        fullname:{
+            first_name:'binod',
+            last_name:'gupta',
+        }
+    },
+    email:'hellodef@123.com',
+    age:19
+
+}
+// console.log(User2.username.fullname?.first_name); //ACCESSING NESTED OBJECTS. ? PROTECT IF FULLNAME DOESNOT EXIST.
+// console.log(User2['email']);
+
+
+// MERGING OBJECTS.
+
+const obj1 = {1:'ram' , 2:'shyam'};
+const obj2 = {3:'sita' , 4:'gita'};
+
+const obj3 = {...obj1, ...obj2};        //SPREAD MOSTLY USED.
+// console.log(obj3);
+
+const obj4 = Object.assign({},obj1,obj2);    //LESS USED.
+// console.log(obj4);
+
+
+// ******************* OBJECT 3 / CHAPTER 18 ************************************************
+
+// DE-STRUCTURE OF OBJECTS.
+
+const course = {
+    course_name : 'js',
+    price : '999',
+    course_instructor : 'hitesh sir'
+};
+
+const{course_instructor : instructor} = course;  //MAKING SHORT TO ACCESS.
+console.log(instructor);
+
 
 
