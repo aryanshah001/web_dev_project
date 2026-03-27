@@ -74,7 +74,7 @@ user1.greeting = function(){            //DOES NOT WORK IF U FREEZE.
 }
 // console.log(user1.greeting());          //THESE FUNCTION RETURN UNDEFINED ALSO.
 
-// TO PRING OUTPUT ONLY (WITHOUT UNDEFINED).TWO WAYS :-
+// TO PRINT OUTPUT ONLY (WITHOUT UNDEFINED).TWO WAYS :-
 
 user1.greeting=function(){              // IST WAY
     return `hii everyone , I am ${this.name}`
