@@ -1,9 +1,14 @@
-function isLoggedInUser(username){
-    if (username === undefined){
-        console.log('plz define name ist');
-        return
+function one(){
+    const username = 'hitesh'
+
+    function two(){
+        const website = 'youtube'
+        console.log(username);
         
     }
-    return `${username} is logged in`
+    // console.log(website);        //CANNOT ACCESS 
+        two()                       //CAN ACCESS
+
+    
 }
-console.log(isLoggedInUser('binod'));
+// one()            //MUST RUN  TO SEE RESULT
