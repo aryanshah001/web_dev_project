@@ -1,14 +1,11 @@
-function one(){
-    const username = 'hitesh'
-
-    function two(){
-        const website = 'youtube'
-        console.log(username);
+if (true){
+    const username = 'binod'
+    if (username == 'binod'){
+        const website = " youtube"
+        console.log(username + website);
         
     }
-    // console.log(website);        //CANNOT ACCESS 
-        two()                       //CAN ACCESS
-
+    // console.log(website);
     
-}
-// one()            //MUST RUN  TO SEE RESULT
+}   
+// console.log(username);
