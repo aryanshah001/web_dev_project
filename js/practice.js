@@ -1,11 +1,6 @@
-if (true){
-    const username = 'binod'
-    if (username == 'binod'){
-        const website = " youtube"
-        console.log(username + website);
-        
-    }
-    // console.log(website);
+const username = function(){
+    let name = 'binod'
+    console.log(this.name);
     
-}   
-// console.log(username);
+}
+username()
