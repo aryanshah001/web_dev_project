@@ -63,7 +63,7 @@ else{
     
 }
 
-
+// AND/OR OPERATOR
 // CHECK MULTIPLE CONDITION.
 const isLoggdIn = true
 const debitcard = false
@@ -78,6 +78,26 @@ if (loggedInFromGoogle || loggedInFromEmail) {      // WORK IF BOTH OR ONE TRUE.
     console.log('logged in');
     
 }
+
+
+// ************NULLISH COALESCING OPERATOR (??) : null undefined ********************
+// USECASE :- TO BE SAFE FROM ERROR OF NULL AND UNDEFINED . 
+// ALWAYS DISPLAY SOME VALUE RATHER THAN NULL AND UNDEFINED
+
+
+let val1;
+// val1 = 5 ?? 10
+// val1 = null ?? 10
+// val1 = 5 ?? undefined
+// val1 = null ?? 15 ?? 5
+console.log(val1);
+
+//********** TERNIARY OPERATOR ********************
+
+//condition ? true : false
+const icecreamPrice = 100
+icecreamPrice >=80 ? console.log('price is greater than 80'):console.log('price is less than 80');
+
 
 
 // ***************************** SWITCH CASE *******************************************
@@ -104,3 +124,34 @@ switch (month) {
         console.log("default");
         break;
 }
+
+
+// ***********************TRUTHY / FALSY **************************************
+
+// Note :- 
+// FALSY VALUES = 
+        // false , 0 , -0 , bigint(0n) , null , undefined , ""(empty string) , NaN
+         
+// TRUTHY VALUES = "0" , "false" , " " , [] , {} , function(){}
+
+const userEmail = "hello@def.com"
+if (userEmail) {
+    console.log('Got user email');   
+}
+else{
+    console.log('Dont have user email');
+}
+
+// *************************CHECK EMPTY ARRAY AND OBJECT*****************************
+//CHECKING EITHER ARRAY IS EMPTY OR NOT
+ const user1  = []
+ if (user1.length==0){
+    console.log('Array is empty');  
+ }
+
+//  CHECKING EITHER OBJECT IS EMPTY OR NOT
+const obj1 = {}
+if (Object.keys(obj1).length == 0) {
+    console.log('object is empty');   
+}
+
