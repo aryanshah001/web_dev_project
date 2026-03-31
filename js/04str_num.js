@@ -35,6 +35,15 @@ console.log(url.includes('hit'));  //CHECK IF PRESENT THAT VALUE.
 let c = 'binod-kumar-gupta';
 console.log(c.split('-'));
 
+//CHECK PROTO TYPE IN CONSOLE 
+console.log(str.__proto__);
+
+
+//CHECK PROTO TYPE IN VSCODE
+const str = "hello";
+console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(str)));
+
+
 
 // ******************************NUMBER AND MATHS **********************************************
 

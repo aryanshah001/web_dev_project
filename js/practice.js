@@ -1,6 +1,2 @@
-const username = function(){
-    let name = 'binod'
-    console.log(this.name);
-    
-}
-username()
+const str = "hello";
+console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(str)));
