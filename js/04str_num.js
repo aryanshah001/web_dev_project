@@ -1,8 +1,8 @@
 // CHAPTER 11
 
 // // STRING CAN BE DECLARED IN TWO WAYS.
-// 1. let name = 'binod';
-// 2. let name = new String('binod');
+1. let name = 'binod';
+2. let name = new String('binod');
 
 // CONCATENATE
 

@@ -144,8 +144,20 @@ const course = {
     course_instructor : 'hitesh sir'
 };
 
+// NORMALLY ACCESSING TO course_instructor.
+console.log(course.course_instructor);
+
+
+// DE-STRUCTURING 
 const{course_instructor : instructor} = course;  //MAKING SHORT TO ACCESS.
 console.log(instructor);
+
+        // OR
+
+const {course_instructor} = course
+console.log(course_instructor);
+
+
 
 
 
