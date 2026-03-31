@@ -33,7 +33,7 @@ function addNumbers(number1 , number2){
     return output
 }
 const output = addNumbers(5,4)
-// console.log('result: ' , output);
+console.log('result: ' , output);
 
 
 // BASIC        
@@ -41,7 +41,7 @@ function addBothNumber(number3,number4){
     return number3 + number4
 }
 const addition = addBothNumber(9,1)
-// console.log('output:', addition);
+console.log('output:', addition);
 
 // SIMPLE  IF/ELSE  STATEMENT
 

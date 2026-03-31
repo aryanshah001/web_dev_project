@@ -40,6 +40,9 @@ if (true){
 // console.log(username);       //CANNOT BE ACCESS
 
 
+//CLOSURE MEANS :- IN SHORT :- INNER FUNCTION CAN ACCESS OUTER FUNCTION VARIABLES.
+
+
 // **********************************INTERESTING**********************************************
 
 // FUNCTION CAN BE MADE IN TWO WAYS .
@@ -47,7 +50,14 @@ if (true){
 function addOne(num){
     return num + 1
 }
-addOne(5)
+addOne(5)       //WE CAN WRITE ADDONE FIRST THEN DEFINE FUNCTION BUT CANT DO IN EXPRESSION.
+
+
+ //HOISTING :- DECLARING BEFORE FUNCTION (OR, ON THE TOP)
+addOne(5)   //LIKE THIS WE CANT DO IN EXPRESSION.
+function addOne(num){
+    return num + 1
+}
 
 
 const addTwo = function(num2){   //KNOWN AS EXPRESSION ALSO CAN HOLD JSON VALUE, FUNCTION ETC.
