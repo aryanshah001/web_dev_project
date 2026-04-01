@@ -1,10 +1,6 @@
-for (let i = 10; i <=10; i++) {
-    console.log(`\ntable of ${i}`);
-    
-   for (let j = 1; j <=10; j++) {
-    console.log(i + '*' + j + '=' + i*j);
-    
-    
-   }
-    
-}
+let score = 11
+do {
+    console.log(`score is ${score}`);
+    score ++
+} while (score <= 10);
+
