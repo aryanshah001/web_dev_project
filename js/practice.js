@@ -1,6 +1,10 @@
-//PRINT 1 TO 10 USING FOR LOOP.
-
-for (let index = 0; index < 11; index++) {
-    const element = array[index];
+for (let i = 10; i <=10; i++) {
+    console.log(`\ntable of ${i}`);
+    
+   for (let j = 1; j <=10; j++) {
+    console.log(i + '*' + j + '=' + i*j);
+    
+    
+   }
     
 }
