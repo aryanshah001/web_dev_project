@@ -79,7 +79,7 @@ for (const key in myArray) {
     console.log(myArray[key]);  
 }
 
-//USING FOR_OF LOOP TO PRINT ARRAYS . (RECOMMENDED BUT LESS COMMON)
+//USING FOR_OF LOOP TO PRINT ARRAYS . (LESS COMMON)
 const arr = ['ram','sit']
 for (const i of arr) {
     console.log(i);   
