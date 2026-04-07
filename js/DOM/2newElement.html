@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai</title>
+
+  <!-- Types of nodes:
+Element node → <div>, <h1> . (most important)
+Text node → text inside elements (Hello)
+Comment node → comment -->
+
+
+<!-- HTMLCollection = a collection of HTML elements only
+
+✔️ Contains only elements (no text, no comments)
+✔️ Looks like an array
+❌ But NOT a real array -->
+
+
+<!-- nodelist is collection of node -->
+
+</head>
+<body>
+    <div class="parent">
+
+    <div class="day">sunday</div>
+    <div class="day">monday</div>
+    <div class="day">tuesday</div>
+    <div class="day">wedneday</div>
+
+    </div>
+</body>
+<script>
+  const parent = document.querySelector('.parent')
+//   console.log(parent.innerHTML);
+//   console.log(parent.children.innerHTML);
+console.log(parent.children[1]);
+console.log(parent.children[1]);
+console.log(parent.firstElementChild.innerHTML);
+console.log(parent.lastElementChild.innerHTML);
+console.log(parent.lastElementChild.innerHTML);
+
+for (let i = 0; i < parent.children.length; i++) {
+    const element = parent.children[i];
+    console.log(element.innerHTML);
+  }
+
+  // BOTH SAME
+for (let i = 0; i < parent.children.length; i++) {
+    console.log(parent.children[i].innerHTML);     
+  }
+ 
+  // SELECT INDEX 2
+parent.children[2].style.color = 'red'
+
+// SELECT IST ELEMENT OF DAY
+const day1 = document.querySelector('.day')
+console.log(day1.innerHTML);  // SELECT IST ELEMENT OF DAY
+console.log(day1.nextElementSibling);  //2nd NUMBER OUTPUT 
+console.log(day1.parentElement.innerHTML); //PARENT OF CHILD DAY
+
+//GIVES NODELIST
+console.log(parent.childNodes);  
+
+
+//CREATE ELEMENT.
+const div = document.createElement('div')
+console.log(div);
+div.id = Math.round(Math.random() * 10 + 1)
+div.className = 'main class'
+div.setAttribute('title','generated title')
+div.style.backgroundColor = 'yellow'
+div.padding = '12px'
+// div.innerHTML = 'binod'  //NOT RECOMMENDED
+const addText = document.createTextNode('Ram')
+div.appendChild(addText)
+document.body.appendChild(div)
+
+
+</script>
+</html>

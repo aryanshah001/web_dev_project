@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="color: #fff; background-color:  #222;">
+    <ul class="language">
+        <li>javascipt</li>
+        
+    </ul>
+</body>
+<script>
+
+    //OLD METHOD (NOT RECOMMENDED)
+    function addLanguage(langName){
+        const list = document.createElement('li')
+        list.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(list)
+    }
+    addLanguage('python')
+    
+
+    //MODERN-OPTIMIZED AND RECOMMENDED.
+    function addOptiLang (langName){
+        const list = document.createElement('li')
+        list.appendChild(document.createTextNode(langName))
+         
+        document.querySelector('.language').appendChild(list)
+    }
+    addOptiLang('typescript')
+
+    //WITH IF STATEMENT
+    
+    //MODERN-OPTIMIZED AND RECOMMENDED.
+    function addOptiLanguage (langName){
+        const list = document.createElement('li')
+        list.appendChild(document.createTextNode(langName))
+
+        if (langName === 'c++') {
+            list.style.color   = 'red'
+        }
+        
+        document.querySelector('.language').appendChild(list)
+    }
+    addOptiLanguage('c++')
+
+    //EDIT OR REPLACE.
+    const second_lang = document.querySelector("li:nth-child(2)")
+
+    // second_lang.innerHTML = 'hello' //THIS WORK BUT NOT RECOMMENDED
+
+    const newli = document.createElement('li')
+    newli.textContent = 'hello user edited'
+    second_lang.replaceWith(newli)
+
+    //AGAIN EDIT IST ONE. USING OUTERHTML (NOT RECOMMENDED)
+    // const first_lang = document.querySelector       ("li:first-child")
+    // first_lang.outerHTML = '<li>typescript</li>'
+
+    //REMOVE.
+    const last_lang = document.querySelector('li:last-child')
+    last_lang.remove()
+
+</script>
+</html>
