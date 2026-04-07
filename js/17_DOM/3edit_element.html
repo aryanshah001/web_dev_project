@@ -31,9 +31,9 @@
     }
     addOptiLang('typescript')
 
-    //WITH IF STATEMENT
-    
-    //MODERN-OPTIMIZED AND RECOMMENDED.
+
+
+    //USING IF STATEMENT.
     function addOptiLanguage (langName){
         const list = document.createElement('li')
         list.appendChild(document.createTextNode(langName))
@@ -46,6 +46,9 @@
     }
     addOptiLanguage('c++')
 
+
+
+
     //EDIT OR REPLACE.
     const second_lang = document.querySelector("li:nth-child(2)")
 
@@ -55,9 +58,14 @@
     newli.textContent = 'hello user edited'
     second_lang.replaceWith(newli)
 
+
+
     //AGAIN EDIT IST ONE. USING OUTERHTML (NOT RECOMMENDED)
-    // const first_lang = document.querySelector       ("li:first-child")
+    // const first_lang = document.querySelector("li:first-child")
     // first_lang.outerHTML = '<li>typescript</li>'
+
+
+
 
     //REMOVE.
     const last_lang = document.querySelector('li:last-child')
