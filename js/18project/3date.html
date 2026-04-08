@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 200px;
+            gap: 20px;
+        }
+        .time{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 80px;
+            background-color: orange;
+            color: white    ;
+            font-size: 45px;
+        }
+        .banner{
+            font-size: 25px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="container">
+        <div class="banner">Time</div><br>
+        <div class="time"></div>
+    </div>
+
+
+    <script>
+        const time = document.querySelector('.time')
+        setInterval(function(){
+            let date = new Date();
+            // console.log(date.toLocaleTimeString());
+            time.innerHTML = date.toLocaleTimeString()
+            
+        }, 1000)
+        
+    </script>
+</body>
+</html>

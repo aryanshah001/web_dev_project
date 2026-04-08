@@ -41,7 +41,8 @@
 
     <button class = button>Calculate</button> <br><br>
 
-    <div class="result"></div>
+    <div class="result"></div><br><br>
+    <div class="remark"></div>
     
     </form>
     </div>
@@ -56,6 +57,7 @@
             const weight = parseInt(document.querySelector('#weight').value)
             const height = parseInt(document.querySelector('#height').value)
             const results = document.querySelector('.result')
+            const remark = document.querySelector('.remark')
 
             //CHECKs
             if (weight === "" || weight < 0 || isNaN(weight)) {
@@ -69,9 +71,62 @@
               results.innerHTML = `<span>${bmi}</span>`
             }
 
+
+            //remark
+            if (results.innerHTML>=30) {
+                
+                
+            }
         })
 
     </script>
 
 </body>
 </html>
+
+
+
+//*****************PRINT REMARK***********************************************
+
+   
+    <script>
+
+        const form2 = document.querySelector('form')
+        form2.addEventListener('submit',function(e){
+            e.preventDefault()
+
+            let bmi; //COZ WHILE PRINTING REMARK IT MUST BE ACCESSIBLE 
+            const weight = parseInt(document.querySelector('#weight').value)
+            const height = parseInt(document.querySelector('#height').value)
+            const results = document.querySelector('.result')
+            const remark = document.querySelector('.remark')
+
+            //CHECKs
+            if ( weight < 0 || isNaN(weight)) {
+               results.innerHTML = 'plz enter valid weight' 
+            }
+            else if (height < 0 || isNaN(height)) {
+               results.innerHTML = `plz enter valid height ${height}`
+            }
+            else{
+               bmi = (weight / ((height * height)/10000)).toFixed(2);
+              results.innerHTML = Number(bmi)
+            }
+
+
+            //remark
+            if (bmi >= 30) {
+               remark.innerHTML = 'overweight' 
+                
+            }
+            else if (bmi >= 18) {
+               remark.innerHTML = 'best' 
+                
+            }
+            else {
+               remark.innerHTML = 'light' 
+                
+            }
+        })
+
+    </script>

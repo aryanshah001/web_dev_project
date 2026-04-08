@@ -4,57 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .result{
-            font-size: 22px;
-            color: red;
-        }
-    </style>
 </head>
 <body>
-    
-    <h1>Calculate BMI Index</h1>
-
-    <form>
-    <label for="weight">weight</label>
-    <input type="number" name="weight" id="weight"><br><br>
-
-    <label for="height">height</label>
-    <input type="number" name="height" id="height"><br><br>
-
-    <button>Calculate</button><br><br>
-    <div class="result"></div>
-    </form>
-
-
-<script>
-    const form = document.querySelector('form')
-    form.addEventListener('submit',function(e){
-        e.preventDefault()
-   
-    
-
-    const weight = parseInt(document.querySelector('#weight').value);
-    const height = parseInt(document.querySelector('#height').value);
-    const results = document.querySelector('.result')
-
-    if (weight === '' || weight <=0 || isNaN(weight)) {
-        results.innerHTML = 'plz enter valid number'
-    }
-    else if (height === '' || height <=0 || isNaN(height)) {
-        results.innerHTML = 'plz enter valid number'
-    }
-    else{
-        const bmi = weight+height;
-        results.innerHTML = `${bmi}`
-    }
-    })
-
-    
-     
-    
-
-</script>
-
+    <!-- <input type="text" name="" id=""> -->
+    <button type="submit">submit guess</button>
 </body>
 </html>
