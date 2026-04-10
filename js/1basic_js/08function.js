@@ -56,6 +56,8 @@ if(username===undefined){                   // if(!username)
     }
     console.log(userLoggedInMsg('binod'));
    
+//********************* FUNCTION WITH OBJECT AND ARRAY ***********************************
+
 
     // ADDING CART PRICES.
 

@@ -65,7 +65,7 @@ console.log(user1.age);
 user1.greeting = function(){            //DOES NOT WORK IF U FREEZE.
     console.log('say good bye');
 }
-console.log(user1.greeting());
+user1.greeting();
 
 
 // STRING INTERPOLATION (BACKTICKS).
