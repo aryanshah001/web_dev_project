@@ -1,30 +1,6 @@
-<script>
-        const buttons = document.querySelectorAll('.button');
-        const body = document.querySelector('body');
-        buttons.forEach( function(button){
-            // console.log(button);
-            button.addEventListener('click',function(e){
-                // console.log(e);
-                // console.log(e.target);
-                if (e.target.id === 'red') {
-                    // body.style.backgroundColor = 'red'
-                    body.style.backgroundColor = e.target.id
-                }
-                if (e.target.id === 'blue') {
-                    // body.style.backgroundColor = 'blue'
-                    body.style.backgroundColor = e.target.id
-                }
-                if (e.target.id === 'purple') {
-                    // body.style.backgroundColor = 'purple'
-                    body.style.backgroundColor = e.target.id
-                }
-                if (e.target.id === 'black') {
-                    // body.style.backgroundColor = 'black'
-                    body.style.backgroundColor = e.target.id
-                }
-                
-            })
-            
-        });
-        
-    </script>
+myarr1 = ['ram','shyam'];
+myarrNum = [1 , 2 , 3,['hari','gita']];
+myarrNum2 = [0,4,5];
+myarr3= [4];
+result = [myarr1,myarrNum,myarrNum2,myarr3].flat(Infinity)
+console.log(result);

@@ -3,10 +3,10 @@ const myarr2 = ['shaktiman', 'bhim'];
 const myarr3 = [0,1,'binod', null,undefined];
 const myarr4 = new Array(5,6,7,8);    //DONT USE (NOT RECOMMENDED).
 
-console.log(myarr[2]);   //SHOW VALUE OF INDEX 2 IN myarr.
+console.log(myarr[2]);   //SHOW VALUE AT INDEX 2 IN myarr.
 
 let a = myarr.indexOf(3);
-console.log(a);                 // SAME (SHOW INDEX).
+console.log(a);                 // SHOW INDEX NUMBER OF 3.
 
 
 
@@ -32,18 +32,18 @@ console.log(typeof newarr);
 // DIFF IN SLICE AND SPLICE.
 or_arr = [1,2,3,4,5];
 
-const myarr6 = or_arr.slice(1,3);       //OUTPUT = VALUE AT INDEX (1,2) 
+const myarr6 = or_arr.slice(1,3);       //(start, end) 
 console.log(myarr6);
 console.log("slice_original: ", or_arr);  //ORIGINAL VALUE REMAIN UNCHANGED.
 
-const myarr7 = or_arr.splice(1,3);         //OUTPUT = VALUE AT INDEX (1,2,3).
+const myarr7 = or_arr.splice(1,3);         //(start, deletecount , add1, add2....)
 console.log(myarr7);
-console.log("splice_original: ", or_arr);   //ORIGINAL VALUE CHANGED.
+console.log("splice_original: ", or_arr);   //ORIGINAL ARRAY CHANGED.
 
 
 // ***********************CHAPTER 15 . ARRAY PART 2 ****************************************
 
-//ABOVE WE SAW , WE CAN ADD ELEMENT INSIDE ARRYA WITH PUSH. BUT WHAT IF WE WANT TO ADD ARRAY INSIDE ARRAY.
+//ABOVE WE SAW , WE CAN ADD ELEMENT INSIDE ARRAY WITH PUSH. BUT WHAT IF WE WANT TO ADD ARRAY INSIDE ARRAY.
 
 const superhero = ['shaktiman', 'batman', 'spiderman'];
 const villian = ['ompuri', 'amrishpuri', 'dengjongpa'];
@@ -57,8 +57,7 @@ const allhero = superhero.concat(villian);  //BUT CONCAT DOESNOT CHANGE ORIGINAL
 // console.log(allhero);
 
 
-// ONE MORE WAY TO ADD ARRAY INSIDE ARRAY (SPREAD).  
-// MOSTLY  USED.
+// ONE MORE WAY TO ADD ARRAY INSIDE ARRAY (SPREAD). MOSTLY  USED.
 
 const allHeros = [...superhero , ...villian];
 // console.log(allHeros);
@@ -72,7 +71,7 @@ console.log(manyArray.flat(Infinity));
 
 myarr1 = ['ram','shyam'];
 myarrNum = [1 , 2 , 3,['hari','gita']];
-myarrNum2 = [0,4,5];
+myarrNum2 = [0,4,5];    
 myarr3= [4];
 
 result = [myarr1,myarrNum,myarrNum2,myarr3].flat(Infinity);
