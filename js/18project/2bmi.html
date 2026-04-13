@@ -39,7 +39,7 @@
     <label for="height">Enter Height</label>
     <input type="text" name="height" id="height" placeholder="In CM"><br><br>
 
-    <button class = button>Calculate</button> <br><br>
+    <button class = "button" type="submit">Calculate</button> <br><br>
 
     <div class="result"></div><br><br>
     <div class="remark"></div>
@@ -54,6 +54,7 @@
         form.addEventListener('submit',function(e){
             e.preventDefault()
 
+            let bmi;
             const weight = parseInt(document.querySelector('#weight').value)
             const height = parseInt(document.querySelector('#height').value)
             const results = document.querySelector('.result')
@@ -62,21 +63,30 @@
             //CHECKs
             if (weight === "" || weight < 0 || isNaN(weight)) {
                results.innerHTML = 'plz enter valid weight' 
+               return;
             }
             else if (height === "" || height < 0 || isNaN(height)) {
                results.innerHTML = `plz enter valid height ${height}`
+               return;
             }
             else{
-              const bmi = (weight / ((height * height)/10000)).toFixed(2);
+              bmi = (weight / ((height * height)/10000)).toFixed(2);
               results.innerHTML = `<span>${bmi}</span>`
+              return
             }
 
 
             //remark
-            if (results.innerHTML>=30) {
-                
-                
+            if (bmi>=30) {
+                remark.innerHTML = 'fat'
             }
+            else if (bmi>=15) {
+                remark.innerHTML = 'med'
+            }
+            else if (bmi>=1) {
+                remark.innerHTML = 'thin'
+            }
+
         })
 
     </script>
@@ -109,7 +119,7 @@
                results.innerHTML = `plz enter valid height ${height}`
             }
             else{
-               bmi = (weight / ((height * height)/10000)).toFixed(2);
+              bmi = (weight / ((height * height)/10000)).toFixed(2);
               results.innerHTML = Number(bmi)
             }
 
