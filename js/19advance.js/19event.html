@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- STUDY :- type , timeStamp , preventDefault() , target , toElement , srcElement , currentTarget
+             clientX , clientY , screenX , screenY 
+             altkey , ctrlkey , shiftkey , keyCode   -->
     
     <ul id="images">
         <li><img id='bird' src="https://tse1.mm.bing.net/th/id/OIP.2037_sZCaTRgav7R82dDfgHaE4?pid=Api&rs=1&c=1&qlt=95&w=125&h=82" alt="bird" width="180px"></li>
@@ -16,14 +20,67 @@
 
         <li><img id="girl" src="https://tse1.mm.bing.net/th/id/OIP._GJJcowgQ7HU3OmCN6IFGgHaJ4?pid=Api&rs=1&c=1&qlt=95&w=76&h=102" alt="girl" width="180px"></li>
 
-        <li><a href="https://google.com" target="_blank">Google</a></li>
+        <li><a href="https://google.com" target="_blank" id="google">Google</a></li>
     </ul>
 
     <script>
+        //false (default false)= eventPropagation (bubbling:- bottom to top , owl to ul)
+        //true = eventPropagation (capturing :- top to bottom)
+        // e.stopPropagation() = to stop bubbling and capturing.
+
         document.getElementById('bird').addEventListener('click', function(){
             alert('bird img clicked');
             
         },false)
+
+        // BOTH ARE SAME (FALSE IS DEFAULT SO NO NEED TO WRITE )
+        document.getElementById('bird').addEventListener('click', function(){
+            alert('bird img clicked');
+            
+        })
+         
+
+        //TO STOP PROPAGATION.
+        document.getElementById('bird').addEventListener('click', function(e){
+            alert('bird img clicked');
+            e.stopPropagation()    
+        })
+
+       
+        //STOP DEFAULT BEHAVIOUR.
+        document.getElementById('google').addEventListener('click',function(e){
+            e.preventDefault()
+            e.stopPropagation()
+            console.log('google clicked');
+            
+        })
+
+
+        document.getElementById('images').addEventListener('click',function(e){
+            console.log(e.target);
+            
+        })
+
+
+        //REMOVE IMAGE ON CLICK.
+
+        document.getElementById('images').addEventListener('click',function(e){
+            // console.log(e.target.parentNode);
+            // console.log(e.target.tagName);
+            
+           let img = e.target.parentNode
+           img.remove()    
+        })
+
+        //ONTHE ABOVE IF U CLICK ON IMAGE THEN IMAGE WILL REMOVE BUT IF U CLICK ON UL(SMALL DOTS) THEN ALL IMAGES WILL BE REMOVED. SO U CAN KEEP HERE SMALL CHECKS.
+
+        document.getElementById('images').addEventListener('click',function(e){  
+            if (e.target.tagName == "IMG") {
+                let image = e.target.parentNode
+                image.remove()
+            }  
+        })
+
     </script>
 
 </body>
