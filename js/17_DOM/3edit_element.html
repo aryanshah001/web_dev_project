@@ -22,7 +22,7 @@
     addLanguage('python')
     
 
-    //MODERN-OPTIMIZED AND RECOMMENDED.
+    //OPTIMIZED.
     function addOptiLang (langName){
         const list = document.createElement('li')
         list.appendChild(document.createTextNode(langName))
@@ -30,6 +30,14 @@
         document.querySelector('.language').appendChild(list)
     }
     addOptiLang('typescript')
+
+    //MORE OPTIMIZED AND MODERN AND PREFERRED.
+    function addLang(lang){
+    const li = document.createElement("li")
+    li.textContent = lang
+    document.querySelector('.language').appendChild(li)
+}
+addLang('TypeScript')
 
 
 
