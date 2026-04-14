@@ -6,55 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <label for="height">height</label><br>
-        <input type="text" name="height" id="height"> <br><br>
-        <label for="weight">weight</label><br>
-        <input type="text" name="weight" id="weight"><br><br>
-        <button class="button">calculate</button>
-        <div class="result"></div><br> <br>
-        <div class="remark"></div>
-    </form>
-
+    <ul class="language">
+        <li>python</li>
+    </ul>
 
     <script>
-        const form = document.querySelector('form')
-        form.addEventListener('submit',function(e){
-            e.preventDefault()
-
-            let bmi;
-            const height = parseInt(document.querySelector('#height').value)
-            const weight = parseInt(document.querySelector('#weight').value)
-            const result = document.querySelector('.result')
-            const remark = document.querySelector('.remark')
-
-            if (height < 0||isNaN(height)) {
-                result.innerHTML = 'plz enter valid height'
-                
-            }
-            else if (weight < 0||isNaN(weight)) {
-                result.innerHTML = 'plz enter valid weight'
-                
-            }
-            else{
-                bmi = height+weight
-                result.innerHTML = bmi
-            }
-
-
-            if (bmi>20) {
-                remark.innerHTML = 'fat'
-            }
-            else if (bmi > 10) {
-                remark.innerHTML = 'medium'
-            }
-            else if (bmi >0) {
-                remark.innerHTML = 'thin'
-            }
-          
-        })
-
-
+        const li = document.querySelector('li')
+        // document.createTextNode('li')
+        li.innerHTML = 'js'
+        document.body.sho
     </script>
 </body>
 </html>
