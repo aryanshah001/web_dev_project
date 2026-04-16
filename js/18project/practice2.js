@@ -68,11 +68,17 @@ function displayGuess(guess){
 }
 
 function displayMessage(message){
-    //
+    lowOrHi.textContent = <h2>`${message}`</h2>
 }
 
 function endGame() {
-    //
+    userInput.value = ""
+    userInput.setAttribute('disabled' , "")
+    p.classList.add('button')
+    p.innerHTML = <h2 id="newGame">Start new game</h2>
+    startOver.appendChild(p)
+    playGame = false
+    newGame();
 }
 
 function newGame() {

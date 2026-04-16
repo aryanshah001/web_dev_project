@@ -4,47 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
         body{
             display: flex;
-            justify-content:center;
+            justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
         }
-        .button{
-            display: flex;
-            display: inline-block;
-            height: 100px;
-            width: 100px;
-
-        }
-        #red{
-            background-color: red;
-        }
-        #green{
-            background-color: green;
+        #subt{
+            margin-left: 6rem;
         }
     </style>
-
 </head>
 <body>
+    <nav><a href="https://google.com" target="_blank">google</a></nav>
     
-    <div class="container">
-        <span class="button" id="red"></span>
-        <span class="button" id="green"></span>
+    <h1>Play Game</h1>
+    <h2>Guess a Number</h2>
+
+    <form>
+        <label for="guessField">Guess a number :- </label>
+        <input type="text" name="guessed_number" id="guessField"><br><br>
+
+        <button type="submit" id="subt">Submit</button><br><br>
+    </form>
+
+    <div class="lastField">
+        <div class="prevGuess">Previous Guesses :- </div>
+        <div class="remGuess">Remaining Guesses :- </div>
+        <div class="lowOrHi"></div>
     </div>
 
-
     <script>
-        const buttons = document.querySelectorAll('.button')
-        const body = document.querySelector('body')
+        const randomNumber = parseInt(Math.random() * 100 + 1)
 
-        buttons.forEach((but) => {
-            but.addEventListener('click',(e)=>{
-                body.style.backgroundColor = e.target.id
-            })
-        })
+        const guess = parseInt(document.querySelector('#guessField').value)
+        const submit = document.querySelector('#subt')
+        const prevGuess = document.querySelector('.prevGuess')
+        const remaining = document.querySelector('.remGuess')
+        const lowOrHi = document.querySelector('.lowOrHi')
+
+        const p = document.createElement('p')
+
+        let prevguess = []
+        let numGuess = 1
+
+        let playGame = true;
     </script>
 
 </body>
