@@ -4,15 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            height: 100vh;
+        }
+        .button{
+            display: flex;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+
+        }
+        #red{
+            background-color: red;
+        }
+        #green{
+            background-color: green;
+        }
+    </style>
+
 </head>
 <body>
     
+    <div class="container">
+        <span class="button" id="red"></span>
+        <span class="button" id="green"></span>
+    </div>
 
 
     <script>
-        let score = 99
-        console.log(score);
-        
+        const buttons = document.querySelectorAll('.button')
+        const body = document.querySelector('body')
+
+        buttons.forEach((but) => {
+            but.addEventListener('click',(e)=>{
+                body.style.backgroundColor = e.target.id
+            })
+        })
     </script>
+
 </body>
 </html>

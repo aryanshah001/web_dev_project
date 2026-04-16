@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Play Game</h1>
+    <h2>Guess a number</h2>
+
+    <form>
+        <label for="inputNumber">Guess Number</label>
+        <input type="number" name="guess_number" id="inputNumber"> <br><br>
+
+        <button type="submit" id="subt">submit</button>
+
+        </form>
+
+        <div class="resultparas">
+            <h3>Previous Guess <span class="guesses"></span></h3>
+            <h3>Remaining Guess <span class="remGuess"></span></h3>
+            <p class="lowOrHi"></p>
+        </div>
+
+
+        <script>
+            let randomNumber = parseInt(Math.random() * 100 + 1)
+
+            const userInput = document.querySelector('#inputNumber')
+            const submit = document.querySelector('#subt')
+            const guessSlot = document.querySelector('.guesses')
+            const remaining = document.querySelector('.remGuess')
+            const lowOrHi = document.querySelector('.lowOrHi')
+
+            const p = document.createElement('p')
+
+            let prevGuess = []
+            let numGuess = 1
+
+            let playGame = true;
+
+              if (playGame) {
+                    submit.addEventListener('click',function(e){
+                        e.preventDefault()
+
+                        const guess = parseInt(userInput.value)
+                        validateGuess(guess)
+                    })
+                }
+
+            function validateGuess(guess){
+                if (isNaN(guess)) {
+                    alert('plz enter valid number')
+                }
+                else if (guess > 100) {
+                    alert('plz enter number less than 100')
+                }
+                else if (guess < 1) {
+                    alert('plz enter number more than 1')
+                }
+                else {
+                    prevGuess.push(guess)
+                    
+                    if (numGuess == 11) {
+                        
+                    }
+                }
+            }
+
+            function checkGuess(guess){
+                
+            }
+
+            function displayGuess() {
+                //
+            }
+
+            function displayMessage(){
+                //
+            }
+
+            function endGame(){
+                //
+            }
+
+            function startGame(){
+                //
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Play Game</h1>
+    <h2>Guess a number</h2>
+
+    <form>
+        <label for="guess_num">Guess Number</label>
+        <input type="text" name="guess_number" id="guess_num"><br><br>
+
+        <button type="submit" id="subt">submit</button>
+
+    </form>
+
+    <div class="resltparas">
+        <p>Previous Guesses: <span class="guesses"></span></p>
+        <p>Remaining Guesses: <span class="remaining">10</span></p>
+        <p class="lowOrHi"></p>
+    </div>
+
+    
+
+</body>
+</html>
