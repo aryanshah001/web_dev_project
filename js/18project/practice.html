@@ -5,52 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        #container{
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
         }
-        #subt{
-            margin-left: 6rem;
+        .submit{
+            margin-left: 5rem;
+            padding: 5px 15px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: red;
         }
     </style>
 </head>
 <body>
-    <nav><a href="https://google.com" target="_blank">google</a></nav>
+    <div id="container">
     
-    <h1>Play Game</h1>
-    <h2>Guess a Number</h2>
+    <h1 style="color:  red;">Let's Play Game</h1>
+    <h2>Guess a number</h2>
 
-    <form>
-        <label for="guessField">Guess a number :- </label>
-        <input type="text" name="guessed_number" id="guessField"><br><br>
+    <form id="form">
+        <label for="guessedNumber">Guess number :- </label>
+        <input type="text" name="guessed_number" id="guessedNumber"><br> <br>
 
-        <button type="submit" id="subt">Submit</button><br><br>
-    </form>
+        <button type="submit" class="submit">submit</button>
+        </form>
 
-    <div class="lastField">
-        <div class="prevGuess">Previous Guesses :- </div>
-        <div class="remGuess">Remaining Guesses :- </div>
-        <div class="lowOrHi"></div>
+        <div class="resultParas">
+        <h3>Previous Guesses :- <span  class="prevGuess"></span></h3>
+        <h3>Remaining Guess :- <span class="remGuess"></span></h3>
+         <p class="lowOrHigh"></p>
+        </div>
+
     </div>
 
     <script>
-        const randomNumber = parseInt(Math.random() * 100 + 1)
+        let randomNumber = parseInt(Math.random() * 100 + 1)
 
-        const guess = parseInt(document.querySelector('#guessField').value)
-        const submit = document.querySelector('#subt')
-        const prevGuess = document.querySelector('.prevGuess')
-        const remaining = document.querySelector('.remGuess')
-        const lowOrHi = document.querySelector('.lowOrHi')
+            const guess = document.querySelector('#guessedNumber')
+            const guessSlot = document.querySelector('.prevGuess')
+            const remaining = document.querySelector('.remGuess')
+            const submit = document.querySelector('#submit')
+            const lowOrHi = document.querySelector('lowOrHigh')
 
-        const p = document.createElement('p')
+            const p = document.createElement('p')
 
-        let prevguess = []
-        let numGuess = 1
+            let previousGuess = []
+            let numGuess = 1
 
-        let playGame = true;
+            let PlayGame = true;
+
+            if (PlayGame) {
+                
+            }
+
+            function validateGuess(guess) {
+                //
+            }
+
+            function checkGuess(guess) {
+                //
+            }
+
+            function displayGuess(guess){
+                //
+            }
+
+            function displayMessage(message){
+                //
+            }
+
+            function endGame() {
+                //
+            }
+
+            function startGame() {
+                //
+            }
+
+     
     </script>
-
+    
 </body>
 </html>

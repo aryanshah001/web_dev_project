@@ -3,7 +3,7 @@ let randomNumber = parseInt(Math.random() * 100 + 1);
 const submit = document.querySelector('#subt');
 const userInput = document.querySelector('#guessNum');
 const guessSlot = document.querySelector('.guesses')
-const remaining = document.querySelector('.remaining')
+const remaining = document.querySelector('.remGuess')
 const lowOrHi = document.querySelector('.lowOrHi')
 const startOver = document.querySelector('.resultparas')
 
