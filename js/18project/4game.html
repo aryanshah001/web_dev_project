@@ -26,17 +26,17 @@
     <h1>Play Game</h1>
     <h2>Guess a number</h2>
 
-    <form>
-        <label for="inputNumber">Guess Number</label>
-        <input type="text" name="guessed_number" id="inputNumber"> <br><br>
+    <form class="form">
+        <label for="guessField" id="guess">Guess a Number</label>
+        <input type="text" name="guessed_number" id="guessField" class="guesField"> <br><br>
 
-        <button type="submit" id="subt">submit</button>
+        <input type="submit" value="Submit guess" id="subt" class="guessSubmit">
 
         </form>
 
-        <div class="resultparas">
+        <div class="resultParas">
             <h3>Previous Guess <span class="guesses"></span></h3>
-            <h3>Remaining Guess <span class="remGuess"></span></h3>
+            <h3>Remaining Guess <span class="lastResult">10</span></h3>
             <p class="lowOrHi"></p>
 
             <script src="practice2.js"></script>
