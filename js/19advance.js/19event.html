@@ -81,6 +81,68 @@
             }  
         })
 
+        //******************* EXTRA ***********************************************
+
+    // attachEvent and onEvent is outdated. modern eventListener is addEventListener.
+
+    // 1. CHECK PROPERTIES.
+    element.addEventListener('click',function(event){
+        console.log(event);
+        
+    })
+
+    // 2.TYPE :- tells what kind of event occured.
+    document.addEventListener('click',function(event){
+        console.log(event.type);
+        
+    })
+
+    // 3.Event.target :- tells which element actually triggered the event.
+    <button>click me </button>
+
+    document.querySelector('button').addEventListener('click' , (event) => {
+        console.log(event.target);
+        
+    })
+
+    // 4. timeStamp :- tells when the event happened (in milisecond)
+    document.addEventListener('click',(event) => {
+        console.log(event.timeStamp);
+        
+    })
+
+    5. event.currentTarget :- then element onwhich the eventListener is attached.
+    // <ul>
+    //     <li>item1</li>
+    //     <li>item2</li>
+    // </ul>
+
+    // <script>
+        document.querySelector('ul').addEventListener('click',function(event){
+            console.log('target :' , event.target);  //OUTPUT = <li> item1.. </li>
+            console.log('currentTarget :' , event.currentTarget); <ul>...</ul> 
+            
+        })
+  
+
+    6. event.relatedTarget :- tells which element the mouse is moving to.
+
+    7. e.clientX = position of mouse inside the browser viewport (horizontal (left-right))
+    8. e.clientY = position of mouse inside the browser viewport (vertical (top-bottom))
+
+    9. screenX and Y= postion of mouse relative to your full-screen
+
+    10. altkey , shiftkey... = these are boolean properties. Tells was this key pressed when the event happened. if pressed with alt+click, shift+click
+
+    11."keydown" console.log(e.key) = tells which key was pressed. a ,b ..
+    12. 'keydown' console.log(e.key); = keyA , shiftleft
+    
+    
+
+
+
+
+
     </script>
 
 </body>
