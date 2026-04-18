@@ -7,86 +7,110 @@
     <style>
         #container{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction:  column;
             align-items: center;
         }
-        .submit{
-            margin-left: 5rem;
-            padding: 5px 15px;
-            font-size: 15px;
-            font-weight: bold;
-            background-color: red;
-        }
     </style>
+
 </head>
 <body>
     <div id="container">
-    
-    <h1 style="color:  red;">Let's Play Game</h1>
-    <h2>Guess a number</h2>
+        <h1> Play Game</h1>
 
     <form id="form">
-        <label for="guessedNumber">Guess number :- </label>
-        <input type="text" name="guessed_number" id="guessedNumber"><br> <br>
+        <label for="inputNumber">Guess Number </label>
+        <input type="text" name="input value" id="inputNumber"> <br><br>
+        <button id="subt">Submit</button>
+    </form>
 
-        <button type="submit" class="submit">submit</button>
-        </form>
-
-        <div class="resultParas">
-        <h3>Previous Guesses :- <span  class="prevGuess"></span></h3>
-        <h3>Remaining Guess :- <span class="remGuess"></span></h3>
-         <p class="lowOrHigh"></p>
-        </div>
-
+    <div class="result">
+    <h3>Previous Guess <span class="prevGuess"></span></h3>
+    <h3>Remaining guess <span class="remGuess">10</span></h3>
+    <p class="lowOrHi"></p>
     </div>
 
-    <script>
-        let randomNumber = parseInt(Math.random() * 100 + 1)
-
-            const guess = document.querySelector('#guessedNumber')
-            const guessSlot = document.querySelector('.prevGuess')
-            const remaining = document.querySelector('.remGuess')
-            const submit = document.querySelector('#submit')
-            const lowOrHi = document.querySelector('lowOrHigh')
-
-            const p = document.createElement('p')
-
-            let previousGuess = []
-            let numGuess = 1
-
-            let PlayGame = true;
-
-            if (PlayGame) {
-                
-            }
-
-            function validateGuess(guess) {
-                //
-            }
-
-            function checkGuess(guess) {
-                //
-            }
-
-            function displayGuess(guess){
-                //
-            }
-
-            function displayMessage(message){
-                //
-            }
-
-            function endGame() {
-                //
-            }
-
-            function startGame() {
-                //
-            }
-
-     
-    </script>
+    </div>
     
+<script>
+
+    const randomNumber = parseInt(Math.random() * 100 + 1)
+
+    const inputNumber = document.querySelector('#inputNumber')
+    const submit = document.querySelector('#subt')
+    const guessSlot = document.querySelector('.prevGuess')
+    const remaining = document.querySelector('.remGuess')
+    const result = document.querySelector('.result')
+    const lowOrHi = document.querySelector('.lowOrHi')
+
+    const p = document.querySelector('p')
+
+    let previousGuess = [];
+    let numGuess = 1;
+    let playGame = true
+
+    if (playGame) {
+        submit.addEventListener('click',function(e){
+        e.preventDefault()
+
+        const guess = parseInt(inputNumber.value)
+        validateGuess(guess)
+    })
+    }
+
+    function validateGuess(guess){
+        if (isNaN(guess)) {
+            alert('plz enter valid number')
+        }
+        else if (guess < 1) {
+            alert('plz enter value more than zero')
+        }
+        else if (guess > 100) {
+            alert('plz enter value less than 100')
+        }
+        else{
+            guessSlot.push();
+
+            if (numGuess === 11) {
+                displayGuess(guess)
+                displayMessage(`Game is over and the random number is ${randomNumber}`)
+                endGame()
+            }
+            else{
+                displayGuess(guess)
+                checkGuess(guess)
+            }
+        }
+    }
+
+    function checkGuess(guess) {
+        if (guess === randomNumber) {
+            displayMessage('you guessed it right')
+            endGame()
+        }
+    }
+
+    function displayGuess(guess) {
+        inputNumber = ''
+        guessSlot.innerHTML += `${guess},`
+        numGuess++
+        remaining = `10 - ${numGuess}`
+    }
+
+    function displayMessage(message) {
+        lowOrHi
+    }
+
+    function endGame() {
+        //
+    }
+
+    function startGame() {
+        //
+    }
+
+  
+
+</script>
+
 </body>
 </html>

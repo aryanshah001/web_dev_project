@@ -23,23 +23,24 @@
 </head>
 <body>
     
-    <h1>Play Game</h1>
+    <h1 style="color:blue">Play Game</h1>
     <h2>Guess a number</h2>
 
-    <form class="form">
+    <form>
         <label for="guessField" id="guess">Guess a Number</label>
         <input type="text" name="guessed_number" id="guessField" class="guesField"> <br><br>
 
-        <input type="submit" value="Submit guess" id="subt" class="guessSubmit">
+        <button type="submit" id="subt" value="submit">Submit</button>
 
         </form>
 
         <div class="resultParas">
-            <h3>Previous Guess <span class="guesses"></span></h3>
-            <h3>Remaining Guess <span class="lastResult">10</span></h3>
+            <h3>Guess Value :-  <span class="guesses"></span></h3>
+            <h3>Remaining Guess :- <span class="remGuess">10</span></h3>
             <p class="lowOrHi"></p>
+            <p class="msg"></p>
 
-            <script src="practice2.js"></script>
+            <script src="game_gpt.js"></script>
         </div>  
 </body>
 </html>
