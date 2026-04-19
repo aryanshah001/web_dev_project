@@ -6,7 +6,6 @@ const guessSlot = document.querySelector('.guesses');
 const remaining = document.querySelector('.remGuess');
 const lowOrHi = document.querySelector('.lowOrHi');
 const startOver = document.querySelector('.resultParas');
-const msg = document.querySelector('.msg');
 
 const p = document.createElement('p');
 
@@ -14,26 +13,24 @@ let prevGuess = [];
 let numGuess = 0;   // start from 0
 let playGame = true;
 
-// Initial remaining
-remaining.textContent = 10;
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    msg.textContent = '';
 
     if (!playGame) return;
 
-    const guess = Number(userInput.value); //must parseInt and takes value inside eventListener.
+    const guess = parseInt(userInput.value); //must parseInt and takes value inside eventListener.
     validateGuess(guess);
 });
 
 function validateGuess(guess){
     if (isNaN(guess)) {
-        msg.textContent = 'Please enter a valid number';
+        displayMessage('Please enter a valid number');
         return;
+
     }
-    if (guess < 1 || guess > 100) {
-        msg.textContent = 'Enter number between 1 and 100';
+    else if (guess < 1 || guess > 100) {
+        displayMessage ('Enter number between 1 and 100');
         return;
     }
 
@@ -41,7 +38,7 @@ function validateGuess(guess){
     numGuess++;
 
     prevGuess.push(guess);
-    displayGuess();
+    cleanupGuess();
 
     // ✅ Check win
     if (guess === randomNumber) {
@@ -65,7 +62,7 @@ function validateGuess(guess){
     }
 }
 
-function displayGuess(){
+function cleanupGuess(){
     userInput.value = "";
 
     guessSlot.textContent = `[${prevGuess.join(', ')}]`;
@@ -85,10 +82,10 @@ function endGame(){
     p.innerHTML = `<h2 id="newGame">Start New Game</h2>`;
     startOver.appendChild(p);
 
-    document.querySelector('#newGame').addEventListener('click', resetGame);
+    document.querySelector('#newGame').addEventListener('click', startGame);
 }
 
-function resetGame(){
+function startGame(){
     randomNumber = Math.floor(Math.random() * 100) + 1;
     prevGuess = [];
     numGuess = 0;

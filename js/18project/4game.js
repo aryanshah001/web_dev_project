@@ -17,15 +17,17 @@ let numGuess = 0
 
 let playGame = true;
 
-
-if (playGame) {
-    form.addEventListener('submit',function(e){
+form.addEventListener('submit',function(e){
         e.preventDefault()
         msg.textContent = '';  //clear the msg of plz enter valid number
+
+        if (playGame) {
+    
         const guess = parseInt(userInput.value)
         validateGuess(guess)
+        }
     })
-}
+
 
 function validateGuess(guess){
     if (isNaN(guess)) {
@@ -67,7 +69,7 @@ function checkGuess(guess){
 
 function displayGuess(guess){
     userInput.value = "";
-    guessSlot.textContent = `[${prevGuess.join(", ")}]`
+    guessSlot.textContent+= `${prevGuess}`
     numGuess++;
     remaining.innerHTML = `${10 - numGuess}`
 
