@@ -3,44 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game </title>
-
+    <title>Game</title>
     <style>
-        body{
+        #container{
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            
+            align-items: center;
         }
-        form{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        #subt{
+            margin-left: 8rem;
         }
     </style>
 </head>
 <body>
-    
-    <h1 style="color:blue">Play Game</h1>
-    <h2>Guess a number</h2>
+    <div id="container">
+        <h1>Guess a number </h1>
+        <form>
+            <label for="inputNumber">Guess a number :- </label>
+            <input type="text" name="guessedNumber" id="inputNumber"><br> <br>
 
-    <form>
-        <label for="guessField" id="guess">Guess a Number</label>
-        <input type="text" name="guessed_number" id="guessField" class="guesField"> <br><br>
-
-        <button type="submit" id="subt" value="submit">Submit</button>
+            <button type="submit" id="subt">submit</button><br><br>
 
         </form>
 
-        <div class="resultParas">
-            <h3>Guess Value :-  <span class="guesses"></span></h3>
-            <h3>Remaining Guess :- <span class="remGuess">10</span></h3>
-            <p class="lowOrHi"></p>
-
-
-            <script src="game_gpt.js"></script>
-        </div>  
-</body>
-</html>
+        <div id="startOver">
+            <div> Guessed value = <span class="guessSlot"></span></div><br><br>
+            <div>Remaining Guesses = <span class="remaining">10</span></div>
+            <div class="lowOrHigh" style="color: red;"></div>
+        </div>
+    </div>
+    </body>
+    </html>
+    <script src="game_gpt.js"></script>
