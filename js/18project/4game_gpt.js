@@ -69,7 +69,9 @@
 
         function endGame(){
             playGame = false
-            inputNumber.setAttribute('disabled',"")
+            // inputNumber.setAttribute('disabled',"")
+            inputNumber.disabled = true;
+
             // p.innerHTML = `<h2 id = 'startOver'>Start New Game</h2>`
            
             const buttons = document.createElement('button')
@@ -92,13 +94,16 @@
             guessSlot.textContent = "";
             remaining.textContent = 10;
             lowOrHigh.textContent = "";
-            // startOver.removeChild(buttons)
-            inputNumber.removeAttribute('disabled',"")
-
+            // startOver.removeChild(buttons)      // Instead this. Use below one.
             const remButtons = document.querySelector('#start')
             if (remButtons) {
                 remButtons.remove()
             }
+
+            // inputNumber.removeAttribute('disabled',"")  // Instead this. Use below one.
+            inputNumber.disabled = false;
+
+            
             
 
         }
