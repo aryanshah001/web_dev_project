@@ -6,7 +6,7 @@
         const guessSlot = document.querySelector('.guessSlot')
         const remaining = document.querySelector('.remaining')
         const lowOrHigh = document.querySelector('.lowOrHigh')
-        const p = document.createElement('p')
+        // const p = document.createElement('p')
 
         let prevGuess = [];
         let numGuess = 0;
