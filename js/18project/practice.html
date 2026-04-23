@@ -6,29 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <div id="container">
-        <h1>chai aor code</h1>
-        <button id="stop">stop</button>
-        <button id="start">start</button>
-    </div>
-    
-    <script>
-        const printBinod = function(){
-            document.querySelector('h1').innerText = 'Binod'
-        }
 
-        let clearTime = setTimeout(printBinod, 2000);
+    <h1>hello user </h1>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
 
-        document.querySelector('#stop').addEventListener('click',function(){
-            clearTimeout(clearTime)
-        })
-        document.querySelector('#start').addEventListener('click',function(){
-            console.log('binod');
-            setTimeout(printBinod, 2000);
+    
+   <script>
+
+    const randomColor = function(){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random()*16)]
             
-        })
+        }
+        return color;
+    }
+    console.log(randomColor());
+    
 
-    </script>
+
+
+
+   </script>
 </body>
 </html>
