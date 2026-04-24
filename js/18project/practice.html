@@ -7,29 +7,46 @@
 </head>
 <body>
 
-    <h1>hello user </h1>
-    <button id="stop">stop</button>
     <button id="start">start</button>
-
+    <button id="stop">stop</button>
     
-   <script>
+    <script>
 
-    const randomColor = function(){
-        const hex = "0123456789ABCDEF"
-        let color = '#'
+        let randomColor = function(){
+            const hex = "0123456789ABCEDF"
+            color ='#'
 
-        for (let i = 0; i < 6; i++) {
-            color += hex[Math.floor(Math.random()*16)]
-            
+            for (let i = 0; i < 6; i++) {
+                color+= hex[Math.floor(Math.random() * 16)]
+                
+            }
+            return color;
         }
-        return color;
-    }
-    console.log(randomColor());
-    
 
+        let intervalId;
+        let changeBgColor = function(){
 
+            if (!intervalId) {
+                intervalId = setInterval(changeColor, 1000);
+            }
+            
+            function changeColor(){
+            document.body.style.backgroundColor = randomColor()
+        }
 
+        }
 
-   </script>
+        function stopBgColor (){
+            clearInterval(intervalId)
+            intervalId = null
+        }
+
+        
+
+        document.querySelector('#start').addEventListener('click',changeBgColor)
+        document.querySelector('#stop').addEventListener('click',stopBgColor)
+        // document.addEventListener('click',stopBgColor)
+    </script>
+
 </body>
 </html>
