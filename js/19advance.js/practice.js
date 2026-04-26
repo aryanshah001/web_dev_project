@@ -1,20 +1,30 @@
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = true;
-        if (!error) {
-            resolve({name:'Ram', state:'Bangalore'})
-        }
-        else{
-            reject('ERROR: sth went wrong')
-        }
-        
-    }, 1000)
+        let error = false;
+if (!error) {
+    resolve({name:'sita',age:25})
+}
+else{
+    reject('error 303')
+}
+    }, 1000);
 })
-promiseFour.then(function(user){
+promiseFour
+.then(function(user){
+    // console.log(user);
+    return user.name
+})
+.then(function(username){
     console.log(username);
-    return user.username
-    
-}).catch(function(err){
-    console.log(err);
+    // console.log(username.age);
+     
+})
+.catch(function(error){
+    console.log(error);
     
 })
+.finally(function(){
+    console.log('the function is either executed or failed');
+    
+})
+
