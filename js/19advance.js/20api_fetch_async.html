@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    //ajax :-(asynchronous js and xml) reload page in background , speed faster , only load data not full html page(feels faster)
+    //json :- (js object notation) { ... }
+    //json formatter = to read api easily.
+    //get api key :- randomuser.me
+
+    <script>
+        //OLDER METHOD. TODAY WE USE FETCH OR ASYNC/AWAIT.
+        // const requestUrl = 'https://randomuser.me/api/'
+
+        // const xhr = new XMLHttpRequest();
+        // xhr.open('GET',requestUrl)
+        // xhr.onreadystatechange = function(){
+        //     console.log(xhr.readyState);
+
+        //     if (xhr.readyState ===4) {
+        //         const data = JSON.parse(this.responseText)
+        //         console.log(data);
+        //         console.log(data.name);
+                
+                
+        //     }
+        // }
+        // xhr.send();
+
+
+        //MODERN METHOD TO CALL API. (USING THEN)
+        // fetch('https://randomuser.me/api/')
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data);
+            
+        // })
+        // .catch(error => {
+        //     console.log(error);
+            
+        // })
+
+
+        // MORE CLEANER (USING ASYNC)
+        async function getData() {
+            try{
+            const response = await fetch('https://randomuser.me/api')
+            const data = await response.json()
+
+            console.log(response);
+            console.log(data);
+            
+        }
+        catch(error){
+            console.log(error);
+            
+        }
+        getData()
+
+//EXTRACT NAME AND EMAIL.
+fetch('https://randomuser.me/api/')
+  .then(res => res.json())
+  .then(data => {
+    const user = data.results[0];
+
+    console.log(user.name.first);
+    console.log(user.email);
+  });
+
+
+  //RUNS 2 URL AT SAME TIME.
+  Promise.all([
+  fetch(url1),
+  fetch(url2)
+]).then(responses => {
+  // both done
+});
+
+
+//PRINT ALL 3 STATE.
+async function getData() {
+  try {
+    console.log("Loading..."); // loading state
+
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error("API error");
+    }
+
+    const data = await res.json();
+
+    console.log("Success:", data); // success state
+
+  } catch (error) {
+    console.log("Error:", error.message); // error state
+  }
+}
+        
+        
+
+    </script>
+
+
+</body>
+</html>
