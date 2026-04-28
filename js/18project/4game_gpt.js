@@ -38,16 +38,19 @@
             numGuess ++ ;
             cleanupGuess()
 
-            if (numGuess == 10) {
-                displayMessage('Game over')
-                endGame()
-                return;
-            }
-            else if (guess == randomNumber ) {
+            if (guess == randomNumber ) {
                 displayMessage('congrats you won the Game')
                 endGame()
                 return;
             }
+
+            else if (numGuess == 10) {
+                displayMessage('Game over')
+                endGame()
+                return;
+            }
+
+            
             else if (guess > randomNumber){
                 displayMessage('too high')
             }
@@ -58,7 +61,7 @@
 
         function cleanupGuess(){
             inputNumber.value = "";
-            guessSlot.textContent = `${prevGuess.join(",")}`
+            guessSlot.textContent = prevGuess.join()
             remaining.textContent = `${10 - numGuess}`
         }
 
@@ -96,6 +99,7 @@
             lowOrHigh.textContent = "";
             // startOver.removeChild(buttons)      // Instead this. Use below one.
             const remButtons = document.querySelector('#start')
+            // remButtons.remove()
             if (remButtons) {
                 remButtons.remove()
             }

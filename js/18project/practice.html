@@ -6,63 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>calculate BMI</h1>
-    <form>
-        <label for="weight">weight</label>
-        <input type="text" name="weight" id="weight"><br><br>
-
-        <label for="height">height</label>
-        <input type="text" name="height" id="height"><br><br>
-
-        <button type="submit">calculate</button>
-        <div class="result"></div>
-        <div class="remark"></div>
-
-    </form>
-
+    <div id="insert">insert</div>
 
     <script>
-        const wet = document.querySelector('#weight')
-        const hite = document.querySelector('#height')
-        const form = document.querySelector('form')
-        form.addEventListener('submit',function(e){
-            e.preventDefault()
+        const insert = document.querySelector('#insert')
+        window.addEventListener('keydown',function(e){
+            insert.innerHTML = `
 
-        weight = parseInt(weight.value)
-        height = parseInt(height.value)
-        const result = document.querySelector('.result')
-        const remark = document.querySelector('.remark')
-
-        if (isNaN(weight) || weight < 1) {
-            result.textContent = 'plz enter valid width'
-            wet.value = ""
-            return;
-            
-        }
-        if (isNaN(height) || height < 1) {
-           result.textContent = 'plz enter valid height'
-            return;
-            
-        }
-        
-        let bmi = height + weight;
-        result.textContent = bmi;
-
-        if (bmi > 10) {
-            remark.textContent = 'overweight'
-            return
-        }
-        if (bmi > 5) {
-            remark.textContent = 'medium'
-            return
-        }
-        else{
-            remark.textContent = 'thin'
-        }
-
+                
+                `
         })
     </script>
-
 </body>
 </html>

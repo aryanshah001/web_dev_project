@@ -96,44 +96,58 @@
 
 
 
-//*****************PRINT REMARK***********************************************
+//***************** little advanced ***********************************************
+// ********** clearing input/remark and result ****************
+<script>
+        const wet = document.querySelector('#weight')
+        const hit = document.querySelector('#height')
+        const form = document.querySelector('form')
+        const result = document.querySelector('.result')
+        const remark = document.querySelector('.remark')
 
-   
-    <script>
-
-        const form2 = document.querySelector('form')
-        form2.addEventListener('submit',function(e){
+        form.addEventListener('submit',function(e){
             e.preventDefault()
 
-            const weight = parseInt(document.querySelector('#weight').value)
-            const height = parseInt(document.querySelector('#height').value)
-            const results = document.querySelector('.result')
-            const remark = document.querySelector('.remark')
+            const weight = parseInt(wet.value)
+            const height = parseInt(hit.value)
 
-            //CHECKs
-            if ( weight < 0 || isNaN(weight)) {
-               results.textContent = 'plz enter valid weight' 
+            wet.addEventListener('focus',clearOutput)
+            wet.addEventListener('focus',clearOutput)
+
+            function clearOutput(){
+                result.textContent = ""
+                remark.textContent = ""
             }
-            else if (height < 0 || isNaN(height)) {
-               results.textContent = `plz enter valid height ${height}`
+
+
+            if (isNaN(weight) || weight < 1) {
+                result.textContent = 'plz enter valid weight'
+                wet.value = ""
+                return;
+            }
+            if (isNaN(height) || height < 1) {
+                result.textContent = 'plz enter valid height'
+                hit.value = ""
+                return;
+            }
+            let bmi = height + weight
+            result.textContent = `${bmi}`
+            form.reset()
+
+
+            if (bmi > 10) {
+                remark.textContent = 'over'
+                
+               
+            }
+            else if (bmi > 5) {
+                remark.textContent = 'mid'
             }
             else{
-              bmi = (weight / ((height * height)/10000)).toFixed(2);
-              results.textContent = `${bmi}`
-
-              if (bmi >= 30) {
-               remark.textContent = 'overweight' 
-                
+                remark.textContent = 'thin'
             }
-            else if (bmi >= 18) {
-               remark.textContent = 'best' 
-                
-            }
-            else {
-               remark.textContent = 'light'    
-            }
-            }
-            
         })
-
     </script>
+
+   
+    
