@@ -72,13 +72,96 @@ fetch('https://randomuser.me/api/')
   });
 
 
-  //RUNS 2 URL AT SAME TIME.
-  Promise.all([
-  fetch(url1),
-  fetch(url2)
-]).then(responses => {
-  // both done
-});
+// ANOTHER EXAMPLE TO EXTRACT NAME/PASS/DOB FROM API THROUGH .THEN
+fetch('https://randomuser.me/api/')
+// fetch('https://randomuser.me/api/?gender=male')
+// fetch('https://randomuser.me/api/?seed=abc')
+.then(res => res.json())
+.then(data => {
+    const usr = data.results[0]
+    // const email = data.results[0].email
+    // const usr = data.info
+
+    // console.log(usr.name.first);
+    // console.log(usr.name.last);
+    // console.log(usr.login.password);
+    console.log(usr.dob.age);
+
+    // console.log(email);
+    
+    // console.log(usr.page);
+  
+})
+.catch(error => {
+    console.log(error);
+    
+})
+
+
+
+// EXTRACT NAME, PASS USING ASYNC FROM API. // IMPORTANT  *******************
+async function getData() {
+    try{
+        const res = await fetch('https://randomuser.me/api')
+        if (!res.ok) {
+            throw new Error('response is not 200 ok')
+        }
+
+        const data = await res.json()
+        const user =  data.results[0]
+        
+        const {email,name,login} = user //Destructuring
+
+        console.log(email);
+        console.log(name.first);
+        console.log(login.salt); 
+
+    }
+    catch(error){
+        console.log(error.message);    
+    }
+}
+getData()
+
+
+
+  //fetch  2 URL AT SAME TIME.
+ async function getData () {
+    try{
+        const [res1, res2] = await Promise.all([
+            fetch('https://randomuser.me/api'),
+            fetch('https://randomuser.me/api?results=2')
+        ]);
+
+        if (!res1.ok || !res2.ok) {
+            throw new Error('sth went wrong')
+        }
+        const [data1, data2] = await Promise.all([
+            res1.json(),
+            res2.json()
+        
+        ]);
+        // console.log(data1.results[0].email);
+
+        const user1 = data1.results[0]
+        const user2 = data2.results[2]
+        const {name:name1,login:login1,email:email1} = user1
+        // const {name:name2,login:login2,email:email2} = user2
+
+        console.log(name1.first);
+        console.log(login1.password);
+        // console.log(name2.last);
+        // console.log(login2.password);
+        
+
+        
+    }
+    catch(error){
+        console.log(error.message);
+        
+    }
+}
+getData()
 
 
 //PRINT ALL 3 STATE.

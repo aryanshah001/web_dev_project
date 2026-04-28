@@ -39,46 +39,13 @@
 <script>
         const buttons = document.querySelectorAll('.button');
         const body = document.querySelector('body');
-        buttons.forEach( function(allbutton){
-            // console.log(allbutton);
+        buttons.forEach(function(allbutton){
             allbutton.addEventListener('click',function(e){
-                // console.log(e);
-                // console.log(e.target);
-                if (e.target.id === 'red') {
-                    // body.style.backgroundColor = 'red'
-                    body.style.backgroundColor = e.target.id
-                }
-                if (e.target.id === 'blue') {
-                    // body.style.backgroundColor = 'blue'
-                    body.style.backgroundColor = e.target.id
-                }
-                if (e.target.id === 'purple') {
-                    // body.style.backgroundColor = 'purple'
-                    body.style.backgroundColor = e.target.id
-                }
-                if (e.target.id === 'black') {
-                    // body.style.backgroundColor = 'black'
-                    body.style.backgroundColor = e.target.id
-                }
-                
+                body.style.backgroundColor = e.target.id
             })
-            
-        });
-        
-        //INSTEAD OF WRITING THAT MUCH ABOVE CODE, THIS WOKS.
-
-        
-        // const but = document.querySelectorAll('.button')
-        // const body = document.querySelector('body')
-
-        // but.forEach(function(hello){
-        //     hello.addEventListener('click',function(e){
-        //         body.style.backgroundColor = e.target.id
-        //     })
-        // })
-
-
-
+        })
+       
+       
         // OR USING ARROW FUNCTION.
 
         // but.forEach((hello) => {
