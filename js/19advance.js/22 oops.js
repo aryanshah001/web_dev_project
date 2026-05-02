@@ -1,5 +1,6 @@
-//CONSTRUCTOR 
+//CONSTRUCTOR and PROTOTYPE.
 
+// old constructor method.
 const User = function(username , standard , percentage){
     this.username = username
     this.standard = standard
