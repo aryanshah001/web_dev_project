@@ -39,11 +39,11 @@ const price = 1100
 if (price > 1000) {
     console.log('price is greater than 1000');   
 } 
-else if (price > 500) {
-    console.log('price is greater than 500');  
-}
 else if (price > 750) {
-    console.log('price is greater than 750');
+    console.log('price is greater than 750');  
+}
+else if (price > 500) {
+    console.log('price is greater than 500');
 }
 else {
     'price is above 100'

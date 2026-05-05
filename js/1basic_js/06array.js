@@ -1,3 +1,9 @@
+// foreach best for array
+// for of also used for array with string  (can use break and continue)
+//for in only for object
+
+
+
 const myarr = [1,2,3,4,5];
 const myarr2 = ['shaktiman', 'bhim'];
 const myarr3 = [0,1,'binod', null,undefined];
