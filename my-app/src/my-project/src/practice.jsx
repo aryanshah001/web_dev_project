@@ -1,12 +1,28 @@
-import PracComp from "./component.jsx/pracComp"
-function Properties () {
+import { useState } from "react";
+
+function Bgcolor2 (){
+    let [color , setColor] = useState('orange')
+    let colors = ["red", "yellow" , "blue" ]
     return(
         <>
-            <h1>hello everyone</h1>
-            <h2 className="mb-5">Trying using React props</h2>
-            <PracComp song1 = 'saiyaan' song2='rama' />
-            <PracComp />
+        <div 
+        className=" h-screen"
+        style={{background:color}}>
+
+        <div
+        className="flex justify-center gap-2">
+            {colors.map((item) => (
+                <button 
+                key={item}
+                onClick={() => setColor(item)}
+                className="rounded-2xl"
+                style={{background:item}}>
+                    {item}
+                </button>
+            ))}
+        </div>
+        </div>
         </>
     )
 }
-export default Properties
+export default Bgcolor2
