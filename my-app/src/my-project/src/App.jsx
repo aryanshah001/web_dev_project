@@ -1,15 +1,16 @@
 import "./App.css";
 // import Prop from "./props1";
-// import BgColor from "../bgcolor2";
-import Bgcolor2 from "./practice";
+import Data from "./prac2";
+
+
+
 
 function App() {
 
   return (
     <>
      {/* <Prop /> */}
-     {/* <BgColor /> */}
-     <Bgcolor2 />
+     <Data />
     </>
   );
 }
