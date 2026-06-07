@@ -1,0 +1,8 @@
+export {default as Layout} from '../Layout'
+export{default as Home} from './Home/Home'
+export {default as Contact} from './Contact/Contact'
+export {default as About} from './About/About'
+export {default as User} from './User/User'
+// export {default as Github} from './Github/Github'
+export {default as GithubNew} from './Github/Github_new'
+export { GithubLoader } from './Github/Github_new'
