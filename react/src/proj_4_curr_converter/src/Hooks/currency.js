@@ -9,7 +9,7 @@ function useCurrencyInfo(currency) {
       `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`,
     )
       .then((res) => res.json())
-      .then((res) => setdata(res[currency]));
+      .then((data) => setdata(data[currency]));
   }, [currency]);
   return data;
 }

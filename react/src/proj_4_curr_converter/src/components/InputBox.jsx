@@ -48,7 +48,7 @@ function InputBox({  //Destructuring
                 >
                     {
                         currencyOptions.map((currency) => (     
-                            <option key={currency} value={currency}>    //must use key while using loop in jsx
+                            <option key={currency} value={currency}>    
                                 {currency}
                             </option>
                         ))

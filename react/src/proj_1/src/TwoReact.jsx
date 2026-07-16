@@ -1,4 +1,4 @@
-function AddTwo(num1, num2){
+    function AddTwo(num1, num2){
     return(
         num1 + num2
     )

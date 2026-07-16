@@ -1,8 +1,8 @@
-import Increment from "./practice"
+import Usestate3 from "./usestate/usestate3"
 function App() {
   return(
     <>
-      <Increment />
+      <Usestate3/>
     </>
   )
   
