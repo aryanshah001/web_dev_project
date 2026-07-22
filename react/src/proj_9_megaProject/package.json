@@ -1,5 +1,5 @@
 {
-  "name": "prac_proj",
+  "name": "proj-9-megaproject",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
-    "@tailwindcss/vite": "^4.3.2",
+    "@tinymce/tinymce-react": "^6.3.0",
+    "appwrite": "^26.2.0",
+    "html-react-parser": "^6.1.5",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-hook-form": "^7.82.0",
     "react-redux": "^9.3.0",
-    "react-router-dom": "^7.18.1",
-    "tailwindcss": "^4.3.2"
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

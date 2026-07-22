@@ -9,9 +9,8 @@ export function TodoForm() {
   const add = (e) => {
     e.preventDefault()
 
-    if(!todo) return
-
-    addTodo({todo, completed:false})
+    if(!todo) return        //todo is state variable.
+    addTodo({todo:todo, completed:false})     //ist todo is property name in todocontext and 2nd one is state variable.
     setTodo('')
   }
   

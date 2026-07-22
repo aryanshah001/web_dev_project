@@ -1,5 +1,8 @@
+import {NavLink, Outlet } from "react-router-dom";
+
 export default function About() {
     return (
+        <>
         <div className="py-16 bg-white">
             <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                 <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
@@ -26,5 +29,19 @@ export default function About() {
                 </div>
             </div>
         </div>
+
+         <li>
+                                <NavLink
+                                to='/about/about2'
+                                    className={() =>
+                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    About2
+                                </NavLink>
+                            </li>
+
+        <Outlet/>
+        </>
     );
 }
