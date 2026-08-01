@@ -23,7 +23,7 @@ export class Service {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        slug, // OR ID.unique()
+        slug, // OR ID.unique()   This is documentId
         {
           title,
           content,
@@ -128,7 +128,10 @@ export class Service {
   }
 
   getFileDownload(fileId) {
-    return this.bucket.getFileDownload(conf.appwriteBucketId, fileId);
+    return this.bucket.getFileDownload(
+      conf.appwriteBucketId, 
+      fileId
+    );
   }
   
 }
