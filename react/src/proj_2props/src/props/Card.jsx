@@ -2,7 +2,7 @@ function Card({name,address,roll}) {
   return (
     <div>
         
-        {name} 
+        name = {name} 
         <br /> 
         {roll} 
         <br />

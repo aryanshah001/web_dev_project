@@ -1,12 +1,11 @@
-// import PassGen from "./prac2";
-// import Bgc from "./prac1";
+import BgColroSir from './bgColorSir2'
 
 
 function App() {
 
   return (
     <>
-     
+     <BgColroSir/>
     </>
   );
 }
