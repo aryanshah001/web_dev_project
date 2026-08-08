@@ -1,14 +1,28 @@
-import LoginProvider from "./context/LoginProvider"
-import Profile from "./components/Profile"
-import Login from "./components/Login"
+import { useEffect, useState } from "react"
+import authService from './auth/Auth'
+import {useDispatch} from 'react-redux'
+import {login,logout} from './index'
 
 function App() {
-  return (
-    <LoginProvider>
-      <Profile />
-      <Login/>
-    </LoginProvider>
-  )
+    const [loading, setLoading] = useState(true)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        authService.getCurrentUser()
+        .then((userdata) => {
+            if(userdata) {
+                dispatch(login(userdata))
+            }
+            else{
+                dispatch(logout())
+            }
+        } )
+        .finally(() => setLoading(false))
+    }, [dispatch])
+
+  return (!loading ? (
+    <Header/>
+  ):(null))
 }
 
 export default App
