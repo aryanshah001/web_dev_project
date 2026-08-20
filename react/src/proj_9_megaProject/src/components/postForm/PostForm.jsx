@@ -1,9 +1,10 @@
 import { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, Select } from "../index";
+import { Button, Input, Select, RTE } from "../index";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import service from "../../appwrite/config";
+
 
 function PostForm({ post }) {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function PostForm({ post }) {
       }
       const dbPost = await service.updatePost(post.$id, {
         ...data,
-        featuredImage: file ? file.$id : undefined,
+        featuredImage: file ? file.$id : post.featuredImage,
       });
       if (dbPost) {
         navigate(`/post/${dbPost.$id}`);
@@ -88,9 +89,74 @@ function PostForm({ post }) {
   }, [subscribe, slugTransform, setValue]);
 
   return (
-  <div>
-    test
-  </div>
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+
+      <div className="w-2/3 px-2">
+      <Input 
+      label='Title :'
+      placeholder="title"
+      className="mb-4"
+      {...register('title',{
+        required:true
+      })}
+      />
+
+      <Input
+      label='slug :'
+      placeholder="slug"
+      className="mb-4"
+      {...register('slug',{required:true})}
+      onInput={(e) => {
+        setValue('slug',slugTransform(e.currentTarget.value),{
+          shouldValidate:true})
+      }}
+      />
+
+      <RTE 
+      label='content :'
+      name='content'
+      control={control}
+      defaultValue={getValues('content')}
+      />
+      </div>
+
+      <div className="w-1/3 px-2">
+      <Input
+      label='featured Image :'
+      type="file"
+      className="mb-4"
+      accept="image/png, image/jpg, image/jpeg, image/gif"
+      {...register('image',{required:!post})}
+      />
+      {
+        post && (
+          <div className="w-full mb-4">
+            <img 
+            src={service.getFilePreview(post.featuredImage)} 
+            alt={post.title}
+            className="rounded-lg"
+            />
+          </div>
+        )}
+
+        <Select
+        options={['active','inactive']}
+        label='status'
+        className='mb-4'
+        {...register('status',{required:true})}
+        />
+
+        <Button 
+        type="submit"
+        bgColor={post ? 'bg-green-500' : undefined}
+        className="w-full"> 
+        
+        {post ? 'update': 'submit'}
+         </Button>
+
+      </div>
+
+    </form>
   );
 }
 

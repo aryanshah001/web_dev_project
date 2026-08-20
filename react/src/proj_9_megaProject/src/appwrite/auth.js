@@ -23,8 +23,6 @@ export class AuthService {
       if (userAccount) {
         //call another methods
         return this.login({ email, password });
-      } else {
-        return userAccount;
       }
     } catch (error) {
       console.log("failed", error);

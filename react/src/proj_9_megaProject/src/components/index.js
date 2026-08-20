@@ -9,5 +9,8 @@ import LogoutBtn from "./Header/LogoutBtn";
 import {login,logout} from '../store/AuthSlice'
 import authService from "../appwrite/auth";
 import RTE from '../components/RTE'
+import Login from '../pages/Login'
+import Signup from '../pages/Signup'
+import PostForm from './postForm/PostForm'
 
-export {Header ,Footer,Logo,Container,LogoutBtn,login,logout,Button,authService,Input,Select,RTE}
+export {Header ,Footer,Logo,Container,LogoutBtn,login,logout,Button,authService,Input,Select,RTE,Login,Signup,PostForm}
