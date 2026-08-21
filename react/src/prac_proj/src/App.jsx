@@ -1,28 +1,35 @@
-import { useEffect, useState } from "react"
-import authService from './auth/Auth'
+import { useState } from "react"
+import authService from './appwrite/auth'
 import {useDispatch} from 'react-redux'
-import {login,logout} from './index'
+import {login , logout} from './store/authSlice'
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import {Outlet} from 'react-router-dom'
 
 function App() {
-    const [loading, setLoading] = useState(true)
-    const dispatch = useDispatch()
+  const [loading, setLoading] = useState()
+  const dispatch = useDispatch()
 
-    useEffect(() => {
-        authService.getCurrentUser()
-        .then((userdata) => {
-            if(userdata) {
-                dispatch(login(userdata))
-            }
-            else{
-                dispatch(logout())
-            }
-        } )
-        .finally(() => setLoading(false))
-    }, [dispatch])
+  authService.getUser()
+  .then((userdata) => {
+    if(userdata){
+      dispatch(login(userdata))
+    }
+    else{
+      dispatch(logout())
+    }
+  })
+  .finally(() => setLoading(false))
 
-  return (!loading ? (
-    <Header/>
-  ):(null))
+  return !loading ? (
+    <>
+    <Header />
+    <main>
+    <Outlet />
+    </main>
+    <Footer />
+    </>
+  ) : null
 }
 
 export default App

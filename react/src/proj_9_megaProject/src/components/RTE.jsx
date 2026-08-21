@@ -14,8 +14,9 @@ export default function RTE({name,control,label,defaultValue=""}) {
         control={control}
         render={({field:{onChange}}) => (
             <Editor
+            initialValue={defaultValue}
+            onEditorChange={onChange}
        init={{
-        initialValue:defaultValue,
         branding:false,
         height:500,
         menubar:true,
@@ -34,7 +35,7 @@ export default function RTE({name,control,label,defaultValue=""}) {
         alignleft aligncenter alignright alignjustify | \
         bullist numlist outdent indent | removeformat | help '
     }}
-    onEditorChange={onChange}
+    
     />
         )}
         />

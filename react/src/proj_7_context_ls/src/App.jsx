@@ -24,7 +24,7 @@ function App() {
     }
 
     useEffect(() => {
-        const storedTodo = JSON.parse(localStorage.getItem('todo1'))  //Here name inside getItem(a) i.e = a, must be same to name in setItem(a) 
+        const storedTodo = JSON.parse(localStorage.getItem('todo1'))  //Here name inside getItem(a) i.e = todo1, must be same to name in setItem(a) 
 
         if(storedTodo && storedTodo.length > 0){
             setTodos(storedTodo)
@@ -65,3 +65,4 @@ function App() {
 }
 
 export default App;
+ 
