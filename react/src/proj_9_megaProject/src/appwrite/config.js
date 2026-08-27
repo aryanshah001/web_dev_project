@@ -23,8 +23,9 @@ export class Service {
         return await this.databases.createDocument(
           conf.appwriteDatabaseId,
           conf.appwriteCollectionId,
-          slug, // OR ID.unique()   This is documentId
+          ID.unique(), //this is documentId
           {
+            slug, 
             title,
             content,
             featuredImage,
@@ -38,13 +39,14 @@ export class Service {
       }
     }
 
-  async updatePost(slug, { title, content, featuredImage, status }) {
+  async updatePost(rowId,{slug, title, content, featuredImage, status }) {
     try {
       return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        slug,
+        rowId,
         {
+          slug,
           title,
           content,
           featuredImage,
@@ -56,12 +58,12 @@ export class Service {
     }
   }
 
-  async deletePost(slug) {
+  async deletePost(rowId) {
     try {
       await this.databases.deleteDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        slug,
+        rowId,
       );
       return true;
     } catch (error) {
@@ -70,13 +72,13 @@ export class Service {
     }
   }
 
-  async getPost(slug) {
+  async getPost(rowId) {
     // THIS GIVES ONLY SINGLE DOCS ONLY IF U KNOW ID.
     try {
       return await this.databases.getDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        slug,
+        rowId,
       );
     } catch (error) {
       console.log("Appwrite service :: getPost :: error", error);

@@ -1,4 +1,4 @@
-import {Login as LoginComponent} from '../components/Login'
+import LoginComponent from '../components/Login'
 
 
 function Login() {

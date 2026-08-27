@@ -10,7 +10,7 @@ function PostForm({ post }) {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.userData);
 
-  const { register, handleSubmit, subscribe, setValue, control, getValues } =
+  const { register, handleSubmit, watch, setValue, control, getValues } =
     useForm({
       defaultValues: {
         title: post?.title || "",
@@ -39,7 +39,7 @@ function PostForm({ post }) {
         featuredImage: file ? file.$id : post.featuredImage,
       });
       if (dbPost) {
-        navigate(`/post/${dbPost.$id}`);
+        navigate(`/post/${dbPost.slug}`);
       }
     } else {
       const file = await service.uploadFile(data.image[0]);
@@ -59,7 +59,7 @@ function PostForm({ post }) {
           userId: userData.$id,
         });
         if (dbPost) {
-          navigate(`/post/${dbPost.$id}`);
+          navigate(`/post/${dbPost.slug}`);
         }
       }
     }
@@ -77,16 +77,18 @@ function PostForm({ post }) {
   }, []);
 
   useEffect(() => {
-    const subscription = subscribe((value, { name }) => {
-      if (name === "title") {
-        setValue("slug", slugTransform(value.title), { shouldValidate: true });
-      }
+    const subscription = watch((value, { name }) => {
+        if (name === "title") {
+            setValue("slug", slugTransform(value.title), {
+                shouldValidate: true
+            });
+        }
     });
-    return () => {
-      subscription.unsubscribe();
-    };
 
-  }, [subscribe, slugTransform, setValue]);
+    return () => {
+        subscription.unsubscribe();
+    };
+}, [watch, slugTransform, setValue]);
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">

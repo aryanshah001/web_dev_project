@@ -1,10 +1,10 @@
 import { useState } from "react";
 import {Link,useNavigate} from 'react-router-dom'
-import authService from './index'
+import authService from "../appwrite/auth";
 import { useDispatch } from "react-redux";
-import {Button,Logo,Input} from './index'
+import {Button,Logo,Input} from '../components'
 import {useForm} from 'react-hook-form'
-import {login as storeLogin} from './index'
+import {login as storeLogin} from '../store/AuthSlice'
 
 function Login() {
     const dispatch = useDispatch()
@@ -46,7 +46,7 @@ function Login() {
         Dont&apos;t have any account?&nbsp;
 
         <Link
-        to='/singup'
+        to='/signup'
         className="font-medium text-primary transition-all duration-200 hover:underline">
             Signup
         </Link>
