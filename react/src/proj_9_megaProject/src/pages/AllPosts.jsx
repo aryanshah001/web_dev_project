@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import service from "../appwrite/config"
 import Container from '../components/Container'
+import PostCard from "../Props/PostCard"
 
 function AllPosts() {
   const [posts, setPosts] = useState([])
@@ -22,7 +23,7 @@ function AllPosts() {
             <div 
             className="p-2 w-1/4"
             key={post.$id}>
-              <postCard post={post}/>
+              <PostCard {...post}/>
             </div>
           ))
         }

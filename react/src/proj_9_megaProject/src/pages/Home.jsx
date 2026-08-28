@@ -1,9 +1,11 @@
 import service from "../appwrite/config"
 import { useEffect, useState } from "react"
 import PostCard from "../Props/PostCard"
+import { useSelector } from "react-redux"
 
 function Home() {
     const [post , setPost] = useState([])
+    const authStatus = useSelector(state => state.status)
 
     useEffect(() => {
         service.getPosts()
@@ -13,10 +15,14 @@ function Home() {
             }
         })
     }, [])
+
+    if(authStatus === false){
+        return <div>plz login</div>
+    }
   
-    if(post.length === 0) {
+    else if(post.length === 0) {
         return (
-            <div>login to read posts</div>
+            <div>zero posts</div>
         )
     }
     else{
@@ -25,7 +31,7 @@ function Home() {
                 {
                     post.map((posts) => (
                         <div key={posts.$id}>
-                            <PostCard post={posts} /> 
+                            <PostCard {...posts} /> 
                              {/* OR <postcard {...posts} /> */}
                         </div>
                     ))

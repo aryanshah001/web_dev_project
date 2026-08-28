@@ -27,6 +27,7 @@ function PostForm({ post }) {
 
   const submit = async (data) => {
     if (post) {
+
       const file = data.image[0]
         ? await service.uploadFile(data.image[0])
         : null;
@@ -39,7 +40,7 @@ function PostForm({ post }) {
         featuredImage: file ? file.$id : post.featuredImage,
       });
       if (dbPost) {
-        navigate(`/post/${dbPost.slug}`);
+        navigate(`/post/${dbPost.$id}`);
       }
     } else {
       const file = await service.uploadFile(data.image[0]);
@@ -56,10 +57,11 @@ function PostForm({ post }) {
         const dbPost = await service.createPost({
           ...data,
           featuredImage: file.$id,
-          userId: userData.$id,
+          userid: userData.$id,
         });
+
         if (dbPost) {
-          navigate(`/post/${dbPost.slug}`);
+          navigate(`/post/${dbPost.$id}`);
         }
       }
     }
