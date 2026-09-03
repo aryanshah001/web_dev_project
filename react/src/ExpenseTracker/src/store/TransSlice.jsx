@@ -1,11 +1,9 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit"
 
 const initialState = {
-    transaction:[{
-        id:1,
-        text:'title',
-        amount:'200'
-    }]
+    transaction:[
+      
+]
 }
 
 const transSlice = createSlice({
@@ -16,7 +14,8 @@ const transSlice = createSlice({
             const addtransaction = {
                 id:nanoid(),
                 text:action.payload.text,
-                amount:action.payload.amount
+                amount:action.payload.amount,
+                type:action.payload.type
             }
             state.transaction.push(addtransaction)
         },
@@ -25,12 +24,20 @@ const transSlice = createSlice({
             },
 
         updateTransaction:(state,action) => {
-            state.transaction = state.transaction.map((items) => items.id === action.payload.id ? {...items,text:action.payload.text,amount:action.payload.amount} : items )
+            state.transaction = state.transaction.map((items) => items.id === action.payload.id ? {
+                ...items,
+                text:action.payload.text,
+                amount:action.payload.amount,
+                type:action.payload.type
+            } : items )
+        },
+        loadTransaction:(state,action) => {
+            state.transaction = action.payload
         }
     }
 
 })
 
-export const {addTransaction,removeTransaction,updateTransaction} = transSlice.actions
+export const {addTransaction,removeTransaction,updateTransaction,loadTransaction} = transSlice.actions
 
 export default transSlice.reducer

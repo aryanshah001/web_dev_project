@@ -3,20 +3,20 @@ import {removeTransaction ,updateTransaction} from '../store/TransSlice'
 import { useDispatch } from "react-redux"
 
 
-function EditTrans({transaction}) {
+function EditIncome({income}) {
     const dispatch = useDispatch()
 
-    const [newMsg, setNewMsg] = useState(transaction.text)
-    const [newAmt, setNewAmt] = useState(transaction.amount)
+    const [newMsg, setNewMsg] = useState(income.text)
+    const [newAmt, setNewAmt] = useState(income.amount)
 
     const [isTransEditable, setIsTransEditable] = useState(false)
 
     const editTrans = () => {
         dispatch(updateTransaction({
-            id:transaction.id,
+            id:income.id,
             text:newMsg,
             amount:newAmt,
-            type:'expenses'
+            type:'income'
         }))
         setIsTransEditable(false)
     }
@@ -59,7 +59,7 @@ function EditTrans({transaction}) {
 
     <button
     className="border-2 border-black px-2 rounded-lg" 
-    onClick={() => dispatch(removeTransaction(transaction.id))}
+    onClick={() => dispatch(removeTransaction(income.id))}
     >
         x
     </button>
@@ -68,4 +68,4 @@ function EditTrans({transaction}) {
   )
 }
 
-export default EditTrans
+export default EditIncome

@@ -4,7 +4,7 @@ import { addTransaction } from "../store/TransSlice"
 
 function AddTrans() {
     const [msg, setMsg] = useState('')
-    const [amt, setAmt] = useState(0)
+    const [amt, setAmt] = useState('')
     const dispatch = useDispatch()
 
 
@@ -18,14 +18,15 @@ function AddTrans() {
             if(!msg || !amt) return
             dispatch(addTransaction({
                 text:msg,
-                amount:amt
+                amount:amt,
+                type:'expense'
             }))
             setMsg("")
             setAmt("")
         }}
         >
             <label
-            className="ml-4"
+            className="ml-4 text-2xl font-bold text-red-500"
             > Enter Expense Title :- </label>
 
             <input 
