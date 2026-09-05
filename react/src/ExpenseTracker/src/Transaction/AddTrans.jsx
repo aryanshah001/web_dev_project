@@ -1,65 +1,104 @@
-import {useState } from "react"
-import { useDispatch } from "react-redux"
-import { addTransaction } from "../store/TransSlice"
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTransaction } from "../store/TransSlice";
+import Search from "./Search";
+import Sort from "../filter/Sort";
+import EditTrans from './EditTrans'
 
 function AddTrans() {
-    const [msg, setMsg] = useState('')
-    const [amt, setAmt] = useState('')
-    const dispatch = useDispatch()
-
+  const [msg, setMsg] = useState("");
+  const [amt, setAmt] = useState("");
+  const [error, setError] = useState("");
+  const [category, setCategory] = useState('');
+  const dispatch = useDispatch();
 
   return (
-    <div className='mt-2'>
-        <h2 className="text-2xl flex justify-center underline ">Enter Expenses</h2>
+    <div>
+      <div className="border-2 border-black mt-5 py-2 mx-5 ">
+        <div className="text-3xl font-bold flex justify-center">
+          Add Expenses
+        </div>
+      </div>
 
-        <form
+      <form
         onSubmit={(e) => {
-            e.preventDefault()
-            if(!msg || !amt) return
-            dispatch(addTransaction({
-                text:msg,
-                amount:amt,
-                type:'expense'
-            }))
-            setMsg("")
-            setAmt("")
-        }}
-        >
-            <label
-            className="ml-4 text-2xl font-bold text-red-500"
-            > Enter Expense Title :- </label>
+          e.preventDefault();
+          if (!msg ) {
+            setError('plz enter expense title')
+            return
+          }
 
-            <input 
-            className="border-2 border-black mt-4 px-3 py-1 rounded"
-            type="text" 
+          else if (!amt ){
+            setError('plz enter Amount')
+            return
+          }
+
+          else if(!category){
+            setError('plz select Category field')
+            return
+          }
+
+          dispatch(
+            addTransaction({
+              text: msg,
+              amount: amt,
+              type: "expense",
+            }),
+          );
+          setMsg("");
+          setAmt("");
+          setCategory('')
+          setError('')
+        }}
+      >
+        <div className="mt-8  flex justify-center gap-1 border-b-2 mx-5 pb-5">
+          <label className="font-bold text-lg"> Enter Expense Title :- </label>
+
+          <input
+            className="border-2 border-black rounded ml-2 px-3 w-78 capitalize"
+            type="text"
             placeholder="enter expense title"
             value={msg}
-            onChange={(e) => setMsg(e.target.value)}
-            />
-           
-            <label 
-            className="ml-4"
-            > Amount :- </label>
+            onChange={(e) => setMsg(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}
+          />
 
-            <input 
-            type="text" 
-            className="border-2 border-black w-25 px-3 py-1 rounded"
+          <label className="font-bold text-lg ml-10"> Amount :- </label>
+
+          <input
+            type="text"
+            className="border-2 border-black rounded ml-2 px-3 w-24"
             placeholder="enter amt  "
             value={amt}
             onChange={(e) => setAmt(Number(e.target.value))}
-            />
+          />
 
-            <button
+          <div className="ml-5">
+            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value=""disabled>Category</option>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="other">Other</option>
+          </select>
+          </div>
+
+          <button
             type="submit"
-            className="border-2 border-black ml-6 px-3 py-1 bg-red-500 text-white rounded-lg"
-            >
-                ADD
-            </button>
+            className="bg-green-500 text-white rounded ml-10 px-3 py-1 font-bold "
+          >
+            ADD
+          </button>
+          <div className="ml-80">
+            <Search type="expense" />
+          </div>
+        </div>
+        {error && <h1 className="font-bold text-red-600 text-2xl"> {error} </h1>}
+      </form>
 
-        </form>
-         
+      <div className="">
+        <Sort Name={EditTrans} type="expense" />
+      </div>
     </div>
-  )
+  );
 }
 
-export default AddTrans
+export default AddTrans;

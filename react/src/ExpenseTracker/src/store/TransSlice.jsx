@@ -15,7 +15,9 @@ const transSlice = createSlice({
                 id:nanoid(),
                 text:action.payload.text,
                 amount:action.payload.amount,
-                type:action.payload.type
+                type:action.payload.type,
+                category:action.payload.category,
+                date:new Date().toISOString()
             }
             state.transaction.push(addtransaction)
         },
@@ -28,7 +30,8 @@ const transSlice = createSlice({
                 ...items,
                 text:action.payload.text,
                 amount:action.payload.amount,
-                type:action.payload.type
+                type:action.payload.type,
+                category:action.payload.category
             } : items )
         },
         loadTransaction:(state,action) => {

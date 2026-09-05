@@ -1,22 +1,25 @@
-import AddIncome from "../Income/AddIncome"
-import EditIncome from "../Income/EditIncome"
-import { useSelector } from "react-redux"
+import AddIncome from "../Transaction/AddIncome"
+// import EditIncome from "../Transaction/EditIncome"
+// import { useSelector } from "react-redux"
 
 function Income() {
-    const transaction = useSelector(state => state.transaction)
+    // const transaction = useSelector(state => state.transaction)
+    // const income = transaction.filter(items => items.type === 'income')
 
-    const income = transaction.filter(item => item.type==='income')
   return (
     <div>
         <AddIncome />
         
-       {
-        income.map((items) => (
+       {/* {
+        income.map((items,index) => (
             <div key={items.id}>
-                <EditIncome income={items} />
+                <EditIncome 
+                income={items} 
+                srNo={index+1}
+                />
             </div>
         ))
-       }
+       } */}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 import { createBrowserRouter,Route, createRoutesFromElements, RouterProvider } from 'react-router-dom'
-// import Layout from './Dashboard/Layout.jsx'
+
 import Income from './pages/Income.jsx'
 import Expense from './pages/Expense.jsx'
 import App from './App.jsx'
