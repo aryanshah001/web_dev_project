@@ -43,6 +43,12 @@ console.log(str.__proto__);
 const str = "hello";
 console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(str)));
 
+//Reverse the string.
+const str2 = 'ram'
+const Reverse = str2.split('').reverse().join('')
+console.log(Reverse);
+
+
 
 
 // ******************************NUMBER AND MATHS **********************************************
