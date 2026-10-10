@@ -10,7 +10,7 @@ function Header() {
     {
       name: "Home",
       slug: "/",
-      active:!authstatus
+      active:authstatus
     },
     {
       name: "Login",
@@ -40,7 +40,7 @@ function Header() {
             </button>
           ): null)}
 
-          <div> {authstatus && <li>LogoutBtn</li> } </div>
+          <div> {authstatus && <div><LogoutBtn /></div> } </div>
         
       </div>
      

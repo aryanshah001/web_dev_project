@@ -1,12 +1,22 @@
-
+import useCustomhook from "../customHook/useCustomhook";
 
 function Home() {
-  return (
-    <div>
-        <img src="https://images.unsplash.com/photo-1542708993627-b6e5bbae43c4?q=80&w=1144&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="NaturePic" className="w-full" />
+  const { error, loading, data } = useCustomhook();
 
-    </div>
-  )
+  if (error) return <p> {error} </p>;
+  if (loading) return <>Loading...</>;
+
+  const Sky = data?.weather[0]?.description;
+  const Tempearature = (data?.main.temp - 273.15).toFixed(2);
+  const FeelsLike = data?.main?.feels_like;
+
+  return (
+      <div className="text-3xl font-bold ">
+        <p>Sky = {Sky}</p>
+        <p>Temperatur = {Tempearature} °C</p>
+        <p>Feels Like = {FeelsLike}</p>
+      </div>
+  );
 }
 
-export default Home
+export default Home;
