@@ -23,7 +23,7 @@ function App() {
   return loading ? <>Loading...</> : (
      <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 mx-2 my-2">
+      <main className="flex-1  bg-slate-100">
       <Outlet />
       </ main>
       <Footer />

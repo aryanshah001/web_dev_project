@@ -26,20 +26,17 @@ function Signup() {
     }
 
   return (
-    <div>
+    <div className="min-h-screen ml-2 mt-4 sm:ml-4 sm:mt-6 md:ml-12 md:mt-8">
 
        {error && <p> {error} </p>}
 
-       <p>Already Have an Account </p>
-       <p className="mt-1"> click Here
-        <Link 
-       className=" px-1 ml-2 text-blue-500 hover:text-black"
-       to='/login'> Login</Link></p> <br />
-
-        <form onSubmit={handleSubmit(signup)}>
+       
+        <div className=" w-full max-w-md  min-h-96 border-2 border-gray-300 rounded-lg  shadow-md justify-center flex flex-col items-center bg-slate-50">
+            <form onSubmit={handleSubmit(signup)}>
+                <div className="text-4xl font-bold text-black flex justify-center mb-7 border-1 border-slate-300 pb-3">Signup</div>
             <label>Enter Name :-</label>
         <input 
-        className="border-2 border-black "
+        className="border-2 border-black px-2 ml-2"
         placeholder="enter full Name"
         {...register('name',{required:true})}
         type="text" 
@@ -47,7 +44,7 @@ function Signup() {
 
             <label>Enter Email :-</label>
         <input 
-        className="border-2 border-black "
+        className="border-2 border-black px-2 ml-2"
         placeholder="Email"
         {...register('email',{required:true})}
         type="email" 
@@ -55,16 +52,26 @@ function Signup() {
 
         <label>Enter PASSWORD :-</label>
         <input 
-        className="border-2 border-black "
+        className="border-2 border-black px-2 ml-2"
         placeholder="enter password"
         type="text" 
         {...register('password',{required:true})}
         /> <br /><br />
 
-        <button 
-        className="border-2 border-black px-2 py-1"
+        <div className="ml-18">
+            <button 
+        className="border-2 border-black px-3 py-1 bg-slate-300 hover:bg-blue-300 rounded-lg"
         type="submit">Signup</button>
-        </form>
+        </div>
+        </form> <br />
+
+        <p>Already Have an Account </p>
+       <p className="mt-1"> click Here
+        <Link 
+       className=" px-1 ml-2 text-blue-500 hover:text-blue-600"
+       to='/login'> Login</Link></p> <br />
+        </div>
+
 
     </div>
   )

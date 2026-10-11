@@ -16,7 +16,7 @@ function LogoutBtn() {
   return (
     <div>
         <button 
-        className="border-2 border-black px-2 py-2"
+        className="border-2 border-black px-2 py-2 rounded-lg hover:bg-amber-100"
         onClick={LogoutHandler}>Logout</button>
     </div>
   )

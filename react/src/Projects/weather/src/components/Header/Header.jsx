@@ -32,7 +32,7 @@ function Header() {
         <div className="flex gap-2 justify-end px-3">
           {navItems.map((items) => items.active ? (
             <button
-              className="border-black border-2 px-2 py-1 bg-slate-300"
+              className="border-black border-2 px-2 py-1 rounded-lg hover:bg-amber-100"
               onClick={() => navigate(items.slug)}
               key={items.name}
             >
