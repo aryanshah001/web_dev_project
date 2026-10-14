@@ -1,6 +1,6 @@
 import {Outlet} from 'react-router-dom'
 import Header from "./components/Header/Header"
-import Footer from "./components/Footer"
+import Footer from "./components/Footer/Footer"
 import { useEffect, useState } from "react"
 import authService from '../../eCommerce/src/appwrite/auth'
 import { useDispatch } from 'react-redux'

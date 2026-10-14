@@ -25,7 +25,7 @@ function Header() {
   ];
 
   return (
-    <div className="bg-blue-300">
+    <div className="bg-blue-300 py-2">
       <div className="font-bold text-2xl flex justify-center items-center">
         Weather Forecast
         </div>
