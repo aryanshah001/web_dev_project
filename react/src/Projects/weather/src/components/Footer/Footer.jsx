@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className=" py-2 bg-black text-white px-5">
 
-      <div className="font-bold text-3xl mb-12">
+      <div className="font-bold text-3xl mb-12 flex justify-center">
         World's most flexible weather data platform
       </div>
 
@@ -69,8 +69,8 @@ function Footer() {
           </div>
 
 
-          <div className="list-none mt-5">
-            <li>©2012-2026 All rights reserved</li>
+          <div className="mt-5">
+            ©2012-2026 All rights reserved
           </div>
         </div>
 
