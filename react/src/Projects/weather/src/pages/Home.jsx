@@ -48,7 +48,7 @@ function Home() {
         )}
 
         {data && !loading && !error && (
-          <div className="mt-8 rounded-xl bg-slate-50 p-5 text-center sm:p-7">
+          <div className="mt-8 rounded-xl bg-slate-300 p-5 text-center sm:p-7">
             <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
               {data.name}
             </h1>

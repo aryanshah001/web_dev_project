@@ -6,30 +6,31 @@ function useCustomhook(city) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (!city) return;
+    if (!city) {
+      setLoading(false);
+      setData(null);
+      return;
+    }
 
     const getData = async () => {
       setLoading(true);
       setError(null);
 
       try {
-        const url = new URL("https://api.openweathermap.org/data/2.5/weather");
-        url.searchParams.set("q", city);
-        url.searchParams.set("appid", "9fe26bff63a3c5f54abbb5320535775b");
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=9fe26bff63a3c5f54abbb5320535775b`
+        );
 
-        const res = await fetch(url);
         if (!res.ok) {
-          if (res.status === 404) {
-            throw new Error("Location not found. Check the city name and try again.");
-          }
-          throw new Error("Weather data could not be loaded. Please try again.");
+          throw new Error(
+            res.status === 404 ? "City not found" : "Weather request failed"
+          );
         }
 
-        const weatherData = await res.json();
-        setData(weatherData);
-      } catch (err) {
-        setError(err.message);
-        setData(null);
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
+        setError(error.message);
       } finally {
         setLoading(false);
       }
