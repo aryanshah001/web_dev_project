@@ -18,7 +18,7 @@ function useCustomhook(city) {
 
       try {
         const res = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=9fe26bff63a3c5f54abbb5320535775b`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9fe26bff63a3c5f54abbb5320535775b`
         );
 
         if (!res.ok) {

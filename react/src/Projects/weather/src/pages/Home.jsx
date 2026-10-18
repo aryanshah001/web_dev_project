@@ -50,7 +50,7 @@ function Home() {
         {data && !loading && !error && (
           <div className="mt-8 rounded-xl bg-slate-300 p-5 text-center sm:p-7">
             <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-              {data.name}
+              {data.name}   <span className=""> - ({data.sys.country})</span>
             </h1>
             {weatherIcon && (
               <img
